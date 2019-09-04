@@ -67,7 +67,14 @@ func (r rejecter) calcHash(fields []string) string {
 	return fmt.Sprintf("%x", sha256.Sum256([]byte(id)))
 }
 
-func (r rejecter) Reject(claims map[string]interface{}) bool {
+func (r rejecter) Reject(claims map[string]interface{}) (returnValue bool) {
+
+	defer func() {
+	  if r := recover(); r != nil {
+	  	// allow access when a panic occurs
+	  	returnValue = false
+	  }
+	}()
 
 	if r.filter == nil || r.filter.Conn == nil {
 		return false
