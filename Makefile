@@ -1,4 +1,4 @@
-.PHONY: all build
+.PHONY: all build test
 
 # This Makefile is a simple example that demonstrates usual steps to build a binary that can be run in the same
 # architecture that was compiled in. The "ldflags" in the build assure that any needed dependency is included in the
@@ -6,7 +6,7 @@
 
 BIN_NAME :=krakend
 OS := $(shell uname | tr '[:upper:]' '[:lower:]')
-VERSION := 0.9.0
+VERSION := 1.0.0
 PKGNAME := krakend
 LICENSE := Apache 2.0
 VENDOR=
@@ -18,9 +18,7 @@ DESC := High performance API gateway. Aggregate, filter, manipulate and add midd
 MAINTAINER := Daniel Ortiz <dortiz@devops.faith>
 DOCKER_WDIR := /tmp/fpm
 DOCKER_FPM := devopsfaith/fpm
-DOCKER_DEP := instrumentisto/dep:0.5.0-alpine
-GOLANG_VERSION := 1.12
-GOBASEDIR=src/github.com/devopsfaith/krakend-ce
+GOLANG_VERSION := 1.13
 
 FPM_OPTS=-s dir -v $(VERSION) -n $(PKGNAME) \
   --license "$(LICENSE)" \
@@ -47,22 +45,23 @@ RPM_OPTS =--rpm-user $(USER) \
 DEBNAME=${PKGNAME}_${VERSION}-${RELEASE}_${ARCH}.deb
 RPMNAME=${PKGNAME}-${VERSION}-${RELEASE}.x86_64.rpm
 
-all: build
+all: test
 
 build:
 	@echo "Building the binary..."
-	@go build -ldflags="-X github.com/openrm/krakend-ce/vendor/github.com/openrm/krakend/core.KrakendVersion=${VERSION}" -o ${BIN_NAME} ./cmd/krakend-ce
+	@GOPROXY=https://goproxy.io go get .
+	@go build -ldflags="-X github.com/openrm/krakend/core.KrakendVersion=${VERSION}" -o ${BIN_NAME} ./cmd/krakend-ce
 	@echo "You can now use ./${BIN_NAME}"
 
 test: build
 	go test -v ./tests
 
 docker_build:
-	docker run --rm -e "GO111MODULE=on" -it golang:${GOLANG_VERSION} make build
+	docker run --rm -it -e "GO111MODULE=on" -v "${PWD}:/app" -w /app golang:${GOLANG_VERSION} make build
 
 docker_build_alpine:
 	docker build -t krakend_alpine_compiler builder/alpine
-	docker run --rm -it -e "BIN_NAME=krakend-alpine" -e "GO111MODULE=on" -v "${PWD}:/go/${GOBASEDIR}" -w /go/${GOBASEDIR} krakend_alpine_compiler go build -o krakend-alpine
+	docker run --rm -it -e "BIN_NAME=krakend-alpine" -e "GO111MODULE=on" -v "${PWD}:/app" -w /app krakend_alpine_compiler  go build -o krakend-alpine
 
 krakend_docker:
 	@echo "You need to compile krakend using 'make docker_build_alpine' to build this container."
