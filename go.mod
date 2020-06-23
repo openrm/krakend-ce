@@ -37,7 +37,7 @@ require (
 	github.com/devopsfaith/krakend-martian v0.0.0-20190424133031-29314a524a91
 	github.com/devopsfaith/krakend-metrics v0.0.0-20190114200758-1e2c2a1f6a62
 	github.com/devopsfaith/krakend-oauth2-clientcredentials v0.0.0-20190206125733-11a9f7170c44
-	github.com/devopsfaith/krakend-opencensus v0.0.0-20190425142549-a584d6fd2cc1
+	github.com/devopsfaith/krakend-opencensus v1.1.0
 	github.com/devopsfaith/krakend-pubsub v0.0.0-20191115170019-2fe979e965cd
 	github.com/devopsfaith/krakend-ratelimit v0.0.0-20190404110207-d63774e96e82
 	github.com/devopsfaith/krakend-rss v0.0.0-20180408220939-4c18c62a99ee
@@ -70,7 +70,7 @@ require (
 	github.com/uber/jaeger-lib v1.5.0 // indirect
 	github.com/ugorji/go v1.1.7 // indirect
 	github.com/unrolled/secure v0.0.0-20171102162350-0f73fc7feba6 // indirect
-	go.opencensus.io v0.22.1
+	go.opencensus.io v0.22.3
 	golang.org/x/crypto v0.0.0-20190923035154-9ee001bba392 // indirect
 	golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7 // indirect
 	gopkg.in/Graylog2/go-gelf.v2 v2.0.0-20180326133423-4dbb9d721348 // indirect
