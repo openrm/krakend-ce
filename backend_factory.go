@@ -8,8 +8,6 @@ import (
 	cel "github.com/devopsfaith/krakend-cel"
 	cb "github.com/devopsfaith/krakend-circuitbreaker/gobreaker/proxy"
 	httpcache "github.com/devopsfaith/krakend-httpcache"
-	lambda "github.com/devopsfaith/krakend-lambda"
-	lua "github.com/devopsfaith/krakend-lua/proxy"
 	"github.com/devopsfaith/krakend-martian"
 	metrics "github.com/devopsfaith/krakend-metrics/gin"
 	"github.com/devopsfaith/krakend-oauth2-clientcredentials"
@@ -22,7 +20,6 @@ import (
 	"github.com/devopsfaith/krakend/encoding"
 	"github.com/devopsfaith/krakend/transport/http/client"
 	"go.opencensus.io/trace"
-	httprequestexecutor "github.com/devopsfaith/krakend/transport/http/client/plugin"
 )
 
 // NewBackendFactory creates a BackendFactory by stacking all the available middlewares:
@@ -32,7 +29,6 @@ import (
 // - pubsub
 // - amqp
 // - cel
-// - lua
 // - rate-limit
 // - circuit breaker
 // - metrics collector
@@ -56,7 +52,7 @@ func NewBackendFactoryWithContext(ctx context.Context, logger logging.Logger, lc
 			return re(trace.NewContext(ctx, ctx.Value(opencensus.ContextKey).(*trace.Span)), req)
 		}
 	}
-	requestExecutorFactory = httprequestexecutor.HTTPRequestExecutor(logger, requestExecutorFactory)
+
 	//  the line below registers martian.staticModifierFromJSON
 	var _ = martian.NewConfiguredBackendFactory(logger, requestExecutorFactory)
 
@@ -82,9 +78,7 @@ func NewBackendFactoryWithContext(ctx context.Context, logger logging.Logger, lc
 	bf := pubsub.NewBackendFactory(ctx, logger, backendFactory)
 	backendFactory = bf.New
 	// backendFactory = amqp.NewBackendFactory(ctx, logger, backendFactory)
-	backendFactory = lambda.BackendFactory(backendFactory)
 	backendFactory = cel.BackendFactory(logger, backendFactory)
-	backendFactory = lua.BackendFactory(logger, backendFactory)
 	backendFactory = juju.BackendFactory(backendFactory)
 	backendFactory = cb.BackendFactory(backendFactory, logger)
 	backendFactory = metricCollector.BackendFactory("backend", backendFactory)

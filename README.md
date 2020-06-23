@@ -64,11 +64,13 @@ http://www.krakend.io/docs/overview/introduction/
 
 ## Build Requirements
 
-- golang 1.11
+- golang 1.10
+- `dep`
 
 ## Build
 ```
-    make build
+    make prepare
+    make
 ```
 
 ## Building with docker
@@ -79,7 +81,7 @@ make docker_build
 ```
 
 ## FPM
-You can set up your fpm docker image to run setting `DOCKER_FPM` on the `Makefile`.
+You can set up your fpm docker image to run setting `DOCKER_FPM` on the `Makefike`.
 
 
 ## Using the generated packages

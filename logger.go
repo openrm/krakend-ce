@@ -1,7 +1,7 @@
 package krakend
 
 import (
-    "io"
+	"os"
 	"time"
 	"regexp"
 	"net/http"
@@ -138,10 +138,10 @@ func loggingHandler(logger logrus.FieldLogger, cfg loggingConfig) gin.HandlerFun
 	}
 }
 
-func NewRouterLogger(cfg loggingConfig, w io.Writer) gin.HandlerFunc {
+func NewRouterLogger(cfg loggingConfig) gin.HandlerFunc {
 	logger := logrus.New()
 
-	logger.SetOutput(w)
+	logger.SetOutput(os.Stdout)
 	logger.SetFormatter(&logrus.JSONFormatter{
 		FieldMap: logrus.FieldMap{
 			logrus.FieldKeyTime: "@timestamp",

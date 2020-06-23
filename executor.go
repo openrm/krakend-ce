@@ -26,14 +26,11 @@ import (
 	"github.com/devopsfaith/krakend/logging"
 	krakendrouter "github.com/devopsfaith/krakend/router"
 	router "github.com/devopsfaith/krakend/router/gin"
-	server "github.com/devopsfaith/krakend/transport/http/server/plugin"
 	"github.com/gin-gonic/gin"
 	"github.com/go-contrib/uuid"
 	"github.com/letgoapp/krakend-influx"
 )
 
-// NewExecutor returns an executor for the cmd package. The executor initalizes the entire gateway by
-// registering the components and composing a RouterFactory wrapping all the middlewares.
 func NewExecutor(ctx context.Context) cmd.Executor {
 	return func(cfg config.ServiceConfig) {
 		var writers []io.Writer
@@ -72,10 +69,6 @@ func NewExecutor(ctx context.Context) cmd.Executor {
 
 		startReporter(ctx, logger, cfg)
 
-		if cfg.Plugin != nil {
-			LoadPlugins(cfg.Plugin.Folder, cfg.Plugin.Pattern, logger)
-		}
-
 		_ = RegisterSubscriberFactories(ctx, cfg, logger)
 
 		// create the metrics collector
@@ -108,15 +101,12 @@ func NewExecutor(ctx context.Context) cmd.Executor {
 
 		// setup the krakend router
 		routerFactory := router.NewFactory(router.Config{
-			Engine:         NewEngine(cfg, logger, loggingCfg, gelfWriter),
-			ProxyFactory:   NewProxyFactory(
-                logger, NewBackendFactoryWithContext(ctx, logger, loggingCfg, metricCollector),
-                metricCollector,
-            ),
+			Engine:         NewEngine(cfg, logger, loggingCfg),
+			ProxyFactory:   NewProxyFactory(logger, NewBackendFactoryWithContext(ctx, logger, loggingCfg, metricCollector), metricCollector),
 			Middlewares:    []gin.HandlerFunc{NewSentryMiddleware(cfg)},
 			Logger:         logger,
 			HandlerFactory: NewHandlerFactory(logger, loggingCfg, metricCollector, tokenRejecterFactory),
-			RunServer:      router.RunServerFunc(server.New(logger, krakendrouter.RunServer)),
+			RunServer:      krakendrouter.RunServer,
 		})
 
 		// start the engines
