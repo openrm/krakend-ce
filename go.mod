@@ -9,16 +9,13 @@ require (
 	contrib.go.opencensus.io/exporter/jaeger v0.0.0-20190424224017-5b8293c22f36 // indirect
 	contrib.go.opencensus.io/exporter/prometheus v0.0.0-20190424224027-f02a6e68f94d // indirect
 	contrib.go.opencensus.io/exporter/zipkin v0.0.0-20190424224031-c96617f51dc6 // indirect
-	github.com/Azure/azure-amqp-common-go v1.1.3 // indirect
 	github.com/PuerkitoBio/goquery v1.4.0 // indirect
 	github.com/andybalholm/cascadia v1.0.0 // indirect
 	github.com/auth0-community/go-auth0 v1.0.0
 	github.com/catalinc/hashcash v0.0.0-20161205220751-e6bc29ff4de9 // indirect
 	github.com/clbanning/mxj v0.0.0-20180418195244-1f00e0bf9bac // indirect
-	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/codegangsta/negroni v1.0.0 // indirect
 	github.com/coreos/etcd v3.3.15+incompatible // indirect
-	github.com/coreos/go-etcd v2.0.0+incompatible // indirect
 	github.com/devopsfaith/krakend v0.0.0-20190921111907-6ff3a6860ce0
 	github.com/devopsfaith/krakend-ce v0.0.0-20190917135805-07029e9a7b49
 	github.com/devopsfaith/krakend-cel v0.0.0-20190502130550-d6872fd4f97e
@@ -57,45 +54,36 @@ require (
 	github.com/letgoapp/krakend-influx v0.0.0-20190214142340-d2fc9466bb3a
 	github.com/mmcdole/gofeed v1.0.0-beta2 // indirect
 	github.com/mmcdole/goxpp v0.0.0-20170720115402-77e4a51a73ed // indirect
-	github.com/nats-io/nuid v1.0.1 // indirect
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7 // indirect
 	github.com/openrm/krakend-jose v0.0.0-20190925083548-04bd6fcc5643
 	github.com/openrm/module-tracing-golang v1.0.16
-	github.com/opentracing/opentracing-go v1.1.0 // indirect
 	github.com/sirupsen/logrus v1.4.2
 	github.com/sony/gobreaker v0.0.0-20170530031423-e9556a45379e // indirect
 	github.com/spf13/cobra v0.0.7 // indirect
-	github.com/uber-go/atomic v1.3.2 // indirect
-	github.com/uber/jaeger-client-go v2.15.0+incompatible // indirect
-	github.com/uber/jaeger-lib v1.5.0 // indirect
 	github.com/ugorji/go v1.1.7 // indirect
 	github.com/unrolled/secure v0.0.0-20171102162350-0f73fc7feba6 // indirect
 	go.opencensus.io v0.22.1
 	golang.org/x/crypto v0.0.0-20190923035154-9ee001bba392 // indirect
-	golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7 // indirect
 	gopkg.in/Graylog2/go-gelf.v2 v2.0.0-20180326133423-4dbb9d721348 // indirect
 	gopkg.in/gin-contrib/cors.v1 v1.0.0-20170318125340-cf4846e6a636 // indirect
 	gopkg.in/square/go-jose.v2 v2.3.1 // indirect
+	labix.org/v2/mgo v0.0.0-20140701140051-000000000287 // indirect
+	launchpad.net/gocheck v0.0.0-20140225173054-000000000087 // indirect
+	sigs.k8s.io/yaml v1.2.0 // indirect
 )
 
-replace github.com/golang/lint => golang.org/x/lint v0.0.0-20190909230951-414d861bb4ac
-
-replace github.com/hashicorp/vault-plugin-auth-pcf => github.com/hashicorp/vault-plugin-auth-cf v0.0.0-20190821162840-1c2205826fee
-
-replace gopkg.in/gin-contrib/cors.v1 => github.com/gin-contrib/cors v1.3.0
-
-replace gopkg.in/urfave/cli.v1 => github.com/urfave/cli v1.22.0
-
-replace sourcegraph.com/sourcegraph/go-diff => github.com/sourcegraph/go-diff v0.5.1
-
-replace github.com/go-xorm/core => xorm.io/core v0.7.0
-
-replace github.com/Unknwon/com => github.com/unknwon/com v1.0.1
-
-replace github.com/Unknwon/i18n => github.com/unknwon/i18n v0.0.0-20190805065654-5c6446a380b6
-
-replace gopkg.in/stretchr/testify.v1 => github.com/stretchr/testify v1.4.0
-
-replace git.apache.org/thrift.git@v0.12.0 => github.com/apache/thrift v0.12.0
-
-replace gopkg.in/src-d/go-git-fixtures.v3 => github.com/src-d/go-git-fixtures v3.5.0+incompatible
+replace (
+	git.apache.org/thrift.git@v0.12.0 => github.com/apache/thrift v0.12.0
+	github.com/Unknwon/com => github.com/unknwon/com v1.0.1
+	github.com/Unknwon/i18n => github.com/unknwon/i18n v0.0.0-20190805065654-5c6446a380b6
+	github.com/go-xorm/core => xorm.io/core v0.7.0
+	github.com/golang/lint => golang.org/x/lint v0.0.0-20190909230951-414d861bb4ac
+	github.com/hashicorp/vault-plugin-auth-pcf => github.com/hashicorp/vault-plugin-auth-cf v0.0.0-20190821162840-1c2205826fee
+	gopkg.in/gin-contrib/cors.v1 => github.com/gin-contrib/cors v1.3.0
+	gopkg.in/src-d/go-git-fixtures.v3 => github.com/src-d/go-git-fixtures v3.5.0+incompatible
+	gopkg.in/stretchr/testify.v1 => github.com/stretchr/testify v1.4.0
+	gopkg.in/urfave/cli.v1 => github.com/urfave/cli v1.22.0
+	labix.org/v2/mgo => github.com/go-mgo/mgo v0.0.0-20160801194620-b6121c6199b7
+	launchpad.net/gocheck => github.com/go-check/check v0.0.0-20180628173108-788fd7840127
+	sourcegraph.com/sourcegraph/go-diff => github.com/sourcegraph/go-diff v0.5.1
+)
