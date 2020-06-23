@@ -1,6 +1,7 @@
 package krakend
 
 import (
+	"sync"
 	"context"
 	"net/http"
 	"github.com/devopsfaith/krakend/config"
@@ -13,22 +14,31 @@ import (
 	"go.opencensus.io/trace"
 )
 
+var once sync.Once
+
 func NewOpenCensusClient(lcfg loggingConfig, clientFactory client.HTTPClientFactory) client.HTTPClientFactory {
 	if !lcfg.configured {
 		return clientFactory
 	}
+
+	prop := lcfg.httpFormat()
+
 	return func(ctx context.Context) *http.Client {
 		client := clientFactory(ctx)
-		transport := client.Transport
-		if transport == nil {
-			transport = http.DefaultTransport
-		}
-		if _, ok := transport.(*ochttp.Transport); !ok {
+
+		once.Do(func() {
+			transport := client.Transport
+
+			if transport == nil {
+				transport = http.DefaultTransport
+			}
+
 			client.Transport = &ochttp.Transport{
 				Base: transport,
-				Propagation: lcfg.httpFormat(),
+				Propagation: prop,
 			}
-		}
+		})
+
 		return client
 	}
 }
@@ -52,19 +62,19 @@ func NewOpenCensusHandlerFactory(hf router.HandlerFactory, lcfg loggingConfig) r
 
 	return func(cfg *config.EndpointConfig, p proxy.Proxy) gin.HandlerFunc {
 		handler := hf(cfg, p)
-		traceHandler := ochttp.Handler{
-			Propagation: prop,
-			GetStartOptions: filterPath,
-			FormatSpanName: func(*http.Request) string {
-				return cfg.Endpoint
-			},
-		}
 		return func(c *gin.Context) {
-			traceHandler.Handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-				c.Set(opencensus.ContextKey, trace.FromContext(r.Context()))
-				c.Request = r
-				handler(c)
-			})
+			traceHandler := ochttp.Handler{
+				Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+					c.Set(opencensus.ContextKey, trace.FromContext(r.Context()))
+					c.Request = r
+					handler(c)
+				}),
+				Propagation: prop,
+				GetStartOptions: filterPath,
+				FormatSpanName: func(*http.Request) string {
+					return cfg.Endpoint
+				},
+			}
 			traceHandler.ServeHTTP(c.Writer, c.Request)
 		}
 	}
