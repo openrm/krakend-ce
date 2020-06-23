@@ -1,6 +1,6 @@
 ### BUILDER
 
-FROM golang:1.12.10-alpine3.10 as BUILDER
+FROM golang:1.13.12-alpine3.12 as BUILDER
 
 RUN apk add --no-cache make curl git build-base ca-certificates
 
@@ -31,6 +31,6 @@ VOLUME [ "/etc/krakend" ]
 
 CMD [ "/usr/bin/krakend", "run", "-c", "/etc/krakend/krakend.json" ]
 
-ENV GODEBUG=netdns=cgo 
+ENV GODEBUG=netdns=cgo
 
 EXPOSE 8000 8090
