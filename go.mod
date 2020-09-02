@@ -17,6 +17,8 @@ require (
 	github.com/codegangsta/negroni v1.0.0 // indirect
 	github.com/coreos/etcd v3.3.15+incompatible // indirect
 	github.com/devopsfaith/krakend v0.0.0-20190921111907-6ff3a6860ce0
+	github.com/devopsfaith/krakend-amqp v1.1.0
+	github.com/devopsfaith/krakend-botdetector v0.0.0-20200729112051-82f1b8f8fdfe
 	github.com/devopsfaith/krakend-ce v0.0.0-20190917135805-07029e9a7b49
 	github.com/devopsfaith/krakend-cel v0.0.0-20190502130550-d6872fd4f97e
 	github.com/devopsfaith/krakend-circuitbreaker v0.0.0-20190206135831-673caf8e355a
@@ -30,7 +32,9 @@ require (
 	github.com/devopsfaith/krakend-httpcache v0.0.0-20181030153148-8474476ff874
 	github.com/devopsfaith/krakend-httpsecure v0.0.0-20180922151646-cce73b27c717
 	github.com/devopsfaith/krakend-jsonschema v0.0.0-20190124184701-5705a5015d7a
+	github.com/devopsfaith/krakend-lambda v0.0.0-20200123123306-cce9724ca461
 	github.com/devopsfaith/krakend-logstash v0.0.0-20190131142205-17f4745d3502
+	github.com/devopsfaith/krakend-lua v1.1.1
 	github.com/devopsfaith/krakend-martian v0.0.0-20190424133031-29314a524a91
 	github.com/devopsfaith/krakend-metrics v0.0.0-20190114200758-1e2c2a1f6a62
 	github.com/devopsfaith/krakend-oauth2-clientcredentials v0.0.0-20190206125733-11a9f7170c44
@@ -40,10 +44,11 @@ require (
 	github.com/devopsfaith/krakend-rss v0.0.0-20180408220939-4c18c62a99ee
 	github.com/devopsfaith/krakend-usage v0.0.0-20181025134340-476779c0a36c
 	github.com/devopsfaith/krakend-viper v0.0.0-20190407170411-1cbb76813774
-	github.com/devopsfaith/krakend-xml v0.0.0-20180408220837-5ce94062a4cc
+	github.com/devopsfaith/krakend-xml v0.0.0-20200824111110-baa61b333b05
 	github.com/geetarista/go-bloomd v0.0.0-20140722181834-7f8e8a358bec
 	github.com/getsentry/sentry-go v0.3.0
 	github.com/gin-gonic/gin v1.4.0
+	github.com/go-check/check v0.0.0-20180628173108-788fd7840127 // indirect
 	github.com/go-contrib/uuid v1.2.0
 	github.com/google/cel-go v0.2.0 // indirect
 	github.com/gregjones/httpcache v0.0.0-20190611155906-901d90724c79 // indirect
@@ -55,7 +60,7 @@ require (
 	github.com/mmcdole/gofeed v1.0.0-beta2 // indirect
 	github.com/mmcdole/goxpp v0.0.0-20170720115402-77e4a51a73ed // indirect
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7 // indirect
-	github.com/openrm/krakend-jose v0.0.0-20190925083548-04bd6fcc5643
+	github.com/openrm/krakend-jose v0.0.0-20200902090737-48b026962212
 	github.com/openrm/module-tracing-golang v1.0.16
 	github.com/sirupsen/logrus v1.4.2
 	github.com/sony/gobreaker v0.0.0-20170530031423-e9556a45379e // indirect
@@ -68,7 +73,6 @@ require (
 	gopkg.in/gin-contrib/cors.v1 v1.0.0-20170318125340-cf4846e6a636 // indirect
 	gopkg.in/square/go-jose.v2 v2.3.1 // indirect
 	labix.org/v2/mgo v0.0.0-20140701140051-000000000287 // indirect
-	launchpad.net/gocheck v0.0.0-20140225173054-000000000087 // indirect
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
 
@@ -84,6 +88,5 @@ replace (
 	gopkg.in/stretchr/testify.v1 => github.com/stretchr/testify v1.4.0
 	gopkg.in/urfave/cli.v1 => github.com/urfave/cli v1.22.0
 	labix.org/v2/mgo => github.com/go-mgo/mgo v0.0.0-20160801194620-b6121c6199b7
-	launchpad.net/gocheck => github.com/go-check/check v0.0.0-20180628173108-788fd7840127
 	sourcegraph.com/sourcegraph/go-diff => github.com/sourcegraph/go-diff v0.5.1
 )
