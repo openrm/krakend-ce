@@ -55,6 +55,7 @@ require (
 	github.com/letgoapp/krakend-consul v0.0.0-20190130102841-7623a4da32a1 // indirect
 	github.com/luraproject/lura v1.4.1
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7 // indirect
+	github.com/openrm/krakend-bloomd v0.0.0-20210716064324-815ce3f30e0a
 	github.com/soheilhy/cmux v0.1.4 // indirect
 	github.com/spf13/afero v1.2.2 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect

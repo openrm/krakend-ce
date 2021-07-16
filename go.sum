@@ -504,6 +504,7 @@ github.com/devopsfaith/krakend v1.1.0/go.mod h1:xM0O7nJcXuJWWL0PollS0NFBQLf1KJgA
 github.com/devopsfaith/krakend v1.1.1/go.mod h1:xM0O7nJcXuJWWL0PollS0NFBQLf1KJgA1BI2XAPgdmo=
 github.com/devopsfaith/krakend v1.1.2-0.20200605160540-40b5d80a5807/go.mod h1:b8i/JCI1/iFjg7w9tvg3QFpT5Tc6Qy/75nj+i5dhPCA=
 github.com/devopsfaith/krakend v1.1.2-0.20200826121428-f41e024bd50a/go.mod h1:b8i/JCI1/iFjg7w9tvg3QFpT5Tc6Qy/75nj+i5dhPCA=
+github.com/devopsfaith/krakend v1.2.0 h1:aMxU1GA61s3ryz/d4lbUPIFrUsAqS5mMoDJJHwPdPwU=
 github.com/devopsfaith/krakend v1.2.0/go.mod h1:b8i/JCI1/iFjg7w9tvg3QFpT5Tc6Qy/75nj+i5dhPCA=
 github.com/devopsfaith/krakend-amqp v1.1.0 h1:mWTfMUrRq6zj4w+N70HL/f5xhgclc95JbQHrg7whBGA=
 github.com/devopsfaith/krakend-amqp v1.1.0/go.mod h1:zhWeDJB1F6GCx9mngyCP+jBr8gdRJV4gOVDySAzmD94=
@@ -781,6 +782,8 @@ github.com/gammazero/deque v0.0.0-20190130191400-2afb3858e9c7 h1:D2LrfOPgGHQprIx
 github.com/gammazero/deque v0.0.0-20190130191400-2afb3858e9c7/go.mod h1:GeIq9qoE43YdGnDXURnmKTnGg15pQz4mYkXSTChbneI=
 github.com/gammazero/workerpool v0.0.0-20190406235159-88d534f22b56 h1:VzbudKn/nvxYKOdzgkEBS6SSreRjAgoJ+ZeS4wPFkgc=
 github.com/gammazero/workerpool v0.0.0-20190406235159-88d534f22b56/go.mod h1:w9RqFVO2BM3xwWEcAB8Fwp0OviTBBEiRmSBDfbXnd3w=
+github.com/geetarista/go-bloomd v0.0.0-20140722181834-7f8e8a358bec h1:Qf/YTSmkZxgSPHZJRhlLrCjS3VfsLr7LpQZTPcBvFwk=
+github.com/geetarista/go-bloomd v0.0.0-20140722181834-7f8e8a358bec/go.mod h1:T+04MRw331ZGKqCkOTdGPXojLkthu+CMj/zYB30myDI=
 github.com/getkin/kin-openapi v0.1.0/go.mod h1:+0ZtELZf+SlWH8ZdA/IeFb3L/PKOKJx8eGxAlUZ/sOU=
 github.com/ghodss/yaml v0.0.0-20150909031657-73d445a93680/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeMEF04=
 github.com/ghodss/yaml v1.0.0 h1:wQHKEahhL6wmXdzwWG11gIVCkOv05bNOh+Rxn0yngAk=
@@ -1670,6 +1673,10 @@ github.com/opencontainers/runc v1.0.0-rc9/go.mod h1:qT5XzbpPznkRYVz/mWwUaVBUv2rm
 github.com/opencontainers/runtime-spec v0.1.2-0.20190507144316-5b71a03e2700/go.mod h1:jwyrGlmzljRJv/Fgzds9SsS/C5hL+LL3ko9hs6T5lQ0=
 github.com/openlyinc/pointy v1.1.2 h1:LywVV2BWC5Sp5v7FoP4bUD+2Yn5k0VNeRbU5vq9jUMY=
 github.com/openlyinc/pointy v1.1.2/go.mod h1:w2Sytx+0FVuMKn37xpXIAyBNhFNBIJGR/v2m7ik1WtM=
+github.com/openrm/krakend-bloomd v0.0.0-20210716060824-38255823881f h1:m+g8Wi/Er4GlLw9bMfaKzVgZW7j0ea7d3mIq/WyBSlw=
+github.com/openrm/krakend-bloomd v0.0.0-20210716060824-38255823881f/go.mod h1:5ynUsHwc4o2P0Gg7TUL7cG0cah2v722utugyfNtU+Q0=
+github.com/openrm/krakend-bloomd v0.0.0-20210716064324-815ce3f30e0a h1:aKEj4ez9ryEDoeIwHUd8jiPw6oN0eaMOsZPmyvx1zVA=
+github.com/openrm/krakend-bloomd v0.0.0-20210716064324-815ce3f30e0a/go.mod h1:5ynUsHwc4o2P0Gg7TUL7cG0cah2v722utugyfNtU+Q0=
 github.com/opentracing-contrib/go-observer v0.0.0-20170622124052-a52f23424492/go.mod h1:Ngi6UdF0k5OKD5t5wlmGhe/EDKPoUM3BXZSSfIuJbis=
 github.com/opentracing/basictracer-go v1.0.0/go.mod h1:QfBfYuafItcjQuMwinw9GhYKwFXS9KnPs5lxoYwgW74=
 github.com/opentracing/opentracing-go v1.0.2/go.mod h1:UkNAQd3GIcIGf0SeVgPpRdFStlNbqXla1AfSYxPUl2o=
