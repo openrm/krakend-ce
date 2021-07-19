@@ -1718,6 +1718,10 @@ github.com/openrm/krakend-bloomd v0.0.0-20210716060824-38255823881f h1:m+g8Wi/Er
 github.com/openrm/krakend-bloomd v0.0.0-20210716060824-38255823881f/go.mod h1:5ynUsHwc4o2P0Gg7TUL7cG0cah2v722utugyfNtU+Q0=
 github.com/openrm/krakend-bloomd v0.0.0-20210716064324-815ce3f30e0a h1:aKEj4ez9ryEDoeIwHUd8jiPw6oN0eaMOsZPmyvx1zVA=
 github.com/openrm/krakend-bloomd v0.0.0-20210716064324-815ce3f30e0a/go.mod h1:5ynUsHwc4o2P0Gg7TUL7cG0cah2v722utugyfNtU+Q0=
+github.com/openrm/krakend-cel v0.0.0-20210719101150-9ec8a72804f1 h1:PDXTYybodYQNUVpkievlxqSUxPen/0pU1OJsFxDR3PM=
+github.com/openrm/krakend-cel v0.0.0-20210719101150-9ec8a72804f1/go.mod h1:bt/ODioMmOzZ7jZvL8Fm8zjYujw9ShYbWq8/3kgNqLY=
+github.com/openrm/krakend-jose v0.0.0-20210719112350-52718b067cbd h1:38VrXcpEJ2phv6YDnFntbbgcseaE9WwfDChs2LNFoUY=
+github.com/openrm/krakend-jose v0.0.0-20210719112350-52718b067cbd/go.mod h1:QLt/S04PVAOiOKNekq0Lq+1Wapr+NDAiEF8PIzof52A=
 github.com/openrm/krakend-sentry v0.0.0-20210719091511-65b801de7883 h1:CjyY9MO+Uoi4+FUxS4tfYe1w+FXHbOBfMm4v9ISYROo=
 github.com/openrm/krakend-sentry v0.0.0-20210719091511-65b801de7883/go.mod h1:JK8Y587Zz9cZfE5eOTbu4cfYZ3Ob57+q85TrQm4SGIo=
 github.com/opentracing-contrib/go-observer v0.0.0-20170622124052-a52f23424492/go.mod h1:Ngi6UdF0k5OKD5t5wlmGhe/EDKPoUM3BXZSSfIuJbis=
