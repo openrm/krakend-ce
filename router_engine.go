@@ -11,6 +11,10 @@ import (
 	"github.com/luraproject/lura/logging"
 )
 
+import (
+	sentry "github.com/openrm/krakend-sentry/gin"
+)
+
 // NewEngine creates a new gin engine with some default values and a secure middleware
 func NewEngine(cfg config.ServiceConfig, logger logging.Logger, w io.Writer) *gin.Engine {
 	if !cfg.Debug {
@@ -31,6 +35,8 @@ func NewEngine(cfg config.ServiceConfig, logger logging.Logger, w io.Writer) *gi
 	lua.Register(logger, cfg.ExtraConfig, engine)
 
 	botdetector.Register(cfg, logger, engine)
+
+	sentry.Register(cfg, logger, engine)
 
 	return engine
 }
