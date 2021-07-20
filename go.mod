@@ -4,7 +4,7 @@ go 1.12
 
 require (
 	github.com/devopsfaith/bloomfilter v1.4.0
-	github.com/devopsfaith/krakend v1.2.0 // indirect
+	github.com/devopsfaith/krakend v1.2.0
 	github.com/devopsfaith/krakend-amqp v1.4.0
 	github.com/devopsfaith/krakend-botdetector v1.4.0
 	github.com/devopsfaith/krakend-cel v1.4.0
@@ -55,4 +55,5 @@ replace github.com/gregjones/httpcache v0.0.0-20190611155906-901d90724c79 => git
 replace (
 	github.com/devopsfaith/krakend-cel v1.4.0 => github.com/openrm/krakend-cel v0.0.0-20210719101150-9ec8a72804f1
 	github.com/devopsfaith/krakend-jose v1.4.0 => github.com/openrm/krakend-jose v0.0.0-20210719112350-52718b067cbd
+	github.com/devopsfaith/krakend-martian v1.4.0 => github.com/openrm/krakend-martian v0.0.0-20210718024057-b5801065122d
 )

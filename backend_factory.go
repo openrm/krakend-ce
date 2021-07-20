@@ -22,6 +22,11 @@ import (
 	httprequestexecutor "github.com/luraproject/lura/transport/http/client/plugin"
 )
 
+import (
+	"github.com/luraproject/lura/encoding"
+	custom "github.com/devopsfaith/krakend-ce/custom"
+)
+
 // NewBackendFactory creates a BackendFactory by stacking all the available middlewares:
 // - oauth2 client credentials
 // - http cache
@@ -50,7 +55,19 @@ func NewBackendFactoryWithContext(ctx context.Context, logger logging.Logger, me
 		return opencensus.HTTPRequestExecutorFromConfig(clientFactory, cfg)
 	}
 	requestExecutorFactory = httprequestexecutor.HTTPRequestExecutor(logger, requestExecutorFactory)
-	backendFactory := martian.NewConfiguredBackendFactory(logger, requestExecutorFactory)
+	requestExecutorFactory = martian.NewRequestExecutorFactory(logger, requestExecutorFactory)
+	backendFactory := func(remote *config.Backend) proxy.Proxy {
+		re := requestExecutorFactory(remote)
+
+		if remote.Encoding == encoding.NOOP {
+			return proxy.NewHTTPProxyDetailed(remote, re, client.NoOpHTTPStatusHandler, proxy.NoOpHTTPResponseParser)
+		}
+
+		dec := remote.Decoder
+		ef := proxy.NewEntityFormatter(remote)
+		rp := proxy.DefaultHTTPResponseParserFactory(proxy.HTTPResponseParserConfig{dec, ef})
+		return proxy.NewHTTPProxyDetailed(remote, re, custom.GetHTTPStatusHandler(remote), rp)
+	}
 	bf := pubsub.NewBackendFactory(ctx, logger, backendFactory)
 	backendFactory = bf.New
 	backendFactory = amqp.NewBackendFactory(ctx, logger, backendFactory)
