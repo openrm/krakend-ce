@@ -14,6 +14,7 @@ import (
 
 import (
 	sentry "github.com/openrm/krakend-sentry/gin"
+	"github.com/devopsfaith/krakend-ce/custom"
 )
 
 // NewHandlerFactory returns a HandlerFactory with a rate-limit and a metrics collector middleware injected
@@ -21,7 +22,7 @@ func NewHandlerFactory(logger logging.Logger, metricCollector *metrics.Metrics, 
 	handlerFactory := juju.HandlerFactory
 	handlerFactory = sentry.HandlerFactory(logger, handlerFactory)
 	handlerFactory = lua.HandlerFactory(logger, handlerFactory)
-	handlerFactory = ginjose.HandlerFactory(handlerFactory, logger, rejecter, statusRejecterFactory)
+	handlerFactory = ginjose.HandlerFactory(handlerFactory, logger, rejecter, custom.StatusRejecterFactory)
 	handlerFactory = metricCollector.NewHTTPHandlerFactory(handlerFactory)
 	handlerFactory = opencensus.New(handlerFactory)
 	handlerFactory = botdetector.New(handlerFactory, logger)

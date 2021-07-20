@@ -24,7 +24,7 @@ import (
 
 import (
 	"github.com/luraproject/lura/encoding"
-	custom "github.com/devopsfaith/krakend-ce/custom"
+	"github.com/devopsfaith/krakend-ce/custom"
 )
 
 // NewBackendFactory creates a BackendFactory by stacking all the available middlewares:

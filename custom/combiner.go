@@ -1,4 +1,4 @@
-package krakend
+package custom
 
 import (
 	"net/http"
