@@ -13,6 +13,7 @@ import (
 
 import (
 	sentry "github.com/openrm/krakend-sentry/gin"
+	customlogging "github.com/devopsfaith/krakend-ce/custom/logging"
 )
 
 // NewEngine creates a new gin engine with some default values and a secure middleware
@@ -22,7 +23,7 @@ func NewEngine(cfg config.ServiceConfig, logger logging.Logger, w io.Writer) *gi
 	}
 
 	engine := gin.New()
-	engine.Use(gin.LoggerWithConfig(gin.LoggerConfig{Output: w}), gin.Recovery())
+	engine.Use(gin.LoggerWithConfig(customlogging.GetLoggingConfig(cfg, logger, w)), gin.Recovery())
 
 	engine.RedirectTrailingSlash = true
 	engine.RedirectFixedPath = true
