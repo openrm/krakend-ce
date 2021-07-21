@@ -9,7 +9,7 @@ import (
 	"time"
 
 	krakendbf "github.com/devopsfaith/bloomfilter/krakend"
-	cel "github.com/devopsfaith/krakend-cel"
+	// cel "github.com/devopsfaith/krakend-cel"
 	cmd "github.com/devopsfaith/krakend-cobra"
 	cors "github.com/devopsfaith/krakend-cors/gin"
 	gelf "github.com/devopsfaith/krakend-gelf"
@@ -274,12 +274,12 @@ func (t BloomFilterJWT) NewTokenRejecter(ctx context.Context, cfg config.Service
 		jose.RejecterFactoryFunc(func(_ logging.Logger, _ *config.EndpointConfig) jose.Rejecter {
 			return reject
 		}),
-		jose.RejecterFactoryFunc(func(l logging.Logger, cfg *config.EndpointConfig) jose.Rejecter {
-			if r := cel.NewRejecter(l, cfg); r != nil {
-				return r
-			}
-			return jose.FixedRejecter(false)
-		}),
+		// jose.RejecterFactoryFunc(func(l logging.Logger, cfg *config.EndpointConfig) jose.Rejecter {
+		// 	if r := cel.NewRejecter(l, cfg); r != nil {
+		// 		return r
+		// 	}
+		// 	return jose.FixedRejecter(false)
+		// }),
 	}), err
 }
 
