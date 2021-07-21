@@ -1714,6 +1714,8 @@ github.com/opencontainers/runc v1.0.0-rc9/go.mod h1:qT5XzbpPznkRYVz/mWwUaVBUv2rm
 github.com/opencontainers/runtime-spec v0.1.2-0.20190507144316-5b71a03e2700/go.mod h1:jwyrGlmzljRJv/Fgzds9SsS/C5hL+LL3ko9hs6T5lQ0=
 github.com/openlyinc/pointy v1.1.2 h1:LywVV2BWC5Sp5v7FoP4bUD+2Yn5k0VNeRbU5vq9jUMY=
 github.com/openlyinc/pointy v1.1.2/go.mod h1:w2Sytx+0FVuMKn37xpXIAyBNhFNBIJGR/v2m7ik1WtM=
+github.com/openrm/krakend-amqp v0.0.0-20210721051118-17b74260382e h1:kbi8k+FGJlfNTz/++tZebHiXfrChW46Tq1iBVvrS2HY=
+github.com/openrm/krakend-amqp v0.0.0-20210721051118-17b74260382e/go.mod h1:GS8gV4zjRkWCBOqmpWvvLbI4kiQuYW77N7QdbeCfHcM=
 github.com/openrm/krakend-bloomd v0.0.0-20210716060824-38255823881f h1:m+g8Wi/Er4GlLw9bMfaKzVgZW7j0ea7d3mIq/WyBSlw=
 github.com/openrm/krakend-bloomd v0.0.0-20210716060824-38255823881f/go.mod h1:5ynUsHwc4o2P0Gg7TUL7cG0cah2v722utugyfNtU+Q0=
 github.com/openrm/krakend-bloomd v0.0.0-20210716064324-815ce3f30e0a h1:aKEj4ez9ryEDoeIwHUd8jiPw6oN0eaMOsZPmyvx1zVA=
