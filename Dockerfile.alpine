@@ -1,0 +1,38 @@
+### BUILDER
+
+FROM golang:1.13.15-alpine3.12 as BUILDER
+
+RUN apk add --no-cache make git build-base ca-certificates
+
+WORKDIR /build
+
+COPY go.mod go.mod
+COPY go.sum go.sum
+
+RUN go mod download
+
+COPY cmd cmd
+COPY custom custom
+COPY *.go ./
+
+RUN go build cmd/krakend-ce/main.go
+RUN chmod +x main
+
+### RUNNER
+
+FROM alpine:3.12
+
+LABEL maintainer="toshiro@openrm.co.jp"
+
+RUN apk add --no-cache ca-certificates
+
+COPY --from=BUILDER /build/main /usr/bin/krakend
+
+VOLUME [ "/etc/krakend" ]
+
+WORKDIR /etc/krakend
+
+ENTRYPOINT [ "/usr/bin/krakend" ]
+CMD [ "run", "-c", "/etc/krakend/krakend.json" ]
+
+EXPOSE 8000 8090
