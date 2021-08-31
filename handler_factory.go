@@ -24,7 +24,7 @@ func NewHandlerFactory(logger logging.Logger, metricCollector *metrics.Metrics, 
 	handlerFactory = lua.HandlerFactory(logger, handlerFactory)
 	handlerFactory = ginjose.HandlerFactory(handlerFactory, logger, rejecter, custom.StatusRejecterFactory)
 	handlerFactory = metricCollector.NewHTTPHandlerFactory(handlerFactory)
-	handlerFactory = opencensus.New(handlerFactory)
+	handlerFactory = opencensus.NewWithPropagation(handlerFactory, custom.Propagation)
 	handlerFactory = botdetector.New(handlerFactory, logger)
 	return handlerFactory
 }

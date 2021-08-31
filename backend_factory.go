@@ -52,7 +52,7 @@ func NewBackendFactoryWithContext(ctx context.Context, logger logging.Logger, me
 		} else {
 			clientFactory = httpcache.NewHTTPClient(cfg)
 		}
-		return opencensus.HTTPRequestExecutorFromConfig(clientFactory, cfg)
+		return opencensus.HTTPRequestExecutorFromConfigAndPropagation(clientFactory, cfg, custom.Propagation)
 	}
 	requestExecutorFactory = httprequestexecutor.HTTPRequestExecutor(logger, requestExecutorFactory)
 	requestExecutorFactory = martian.NewRequestExecutorFactory(logger, requestExecutorFactory)
