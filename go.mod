@@ -54,7 +54,7 @@ require (
 replace github.com/gregjones/httpcache v0.0.0-20190611155906-901d90724c79 => github.com/m4ns0ur/httpcache v0.0.0-20200426190423-1040e2e8823f
 
 replace (
-	github.com/devopsfaith/krakend-amqp v1.4.0 => github.com/openrm/krakend-amqp v0.0.0-20210722082746-457b2c606a2e
+	github.com/devopsfaith/krakend-amqp v1.4.0 => github.com/openrm/krakend-amqp v0.0.0-20210929014739-e4cde5f13338
 	github.com/devopsfaith/krakend-cel v1.4.0 => github.com/openrm/krakend-cel v0.0.0-20210719101150-9ec8a72804f1
 	github.com/devopsfaith/krakend-jose v1.4.0 => github.com/openrm/krakend-jose v0.0.0-20210719112350-52718b067cbd
 	github.com/devopsfaith/krakend-martian v1.4.0 => github.com/openrm/krakend-martian v0.0.0-20210718024057-b5801065122d

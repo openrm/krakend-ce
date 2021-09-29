@@ -1728,6 +1728,10 @@ github.com/openrm/krakend-amqp v0.0.0-20210721051118-17b74260382e h1:kbi8k+FGJlf
 github.com/openrm/krakend-amqp v0.0.0-20210721051118-17b74260382e/go.mod h1:GS8gV4zjRkWCBOqmpWvvLbI4kiQuYW77N7QdbeCfHcM=
 github.com/openrm/krakend-amqp v0.0.0-20210722082746-457b2c606a2e h1:+iDX8FUNcuNj3Pu42/6M5slcn7tHwLVzevcoiKlzurs=
 github.com/openrm/krakend-amqp v0.0.0-20210722082746-457b2c606a2e/go.mod h1:GS8gV4zjRkWCBOqmpWvvLbI4kiQuYW77N7QdbeCfHcM=
+github.com/openrm/krakend-amqp v0.0.0-20210929012759-7ed68b8cc422 h1:xFmWd3amIQsJJ3is5gntgaaX/rGzuKifDqm/48jxoAE=
+github.com/openrm/krakend-amqp v0.0.0-20210929012759-7ed68b8cc422/go.mod h1:GS8gV4zjRkWCBOqmpWvvLbI4kiQuYW77N7QdbeCfHcM=
+github.com/openrm/krakend-amqp v0.0.0-20210929014739-e4cde5f13338 h1:FEu8C0KCAfG/Py81WdvsB4uX0x5eXlKv+GIXjtfHDzg=
+github.com/openrm/krakend-amqp v0.0.0-20210929014739-e4cde5f13338/go.mod h1:GS8gV4zjRkWCBOqmpWvvLbI4kiQuYW77N7QdbeCfHcM=
 github.com/openrm/krakend-bloomd v0.0.0-20210716060824-38255823881f h1:m+g8Wi/Er4GlLw9bMfaKzVgZW7j0ea7d3mIq/WyBSlw=
 github.com/openrm/krakend-bloomd v0.0.0-20210716060824-38255823881f/go.mod h1:5ynUsHwc4o2P0Gg7TUL7cG0cah2v722utugyfNtU+Q0=
 github.com/openrm/krakend-bloomd v0.0.0-20210716064324-815ce3f30e0a h1:aKEj4ez9ryEDoeIwHUd8jiPw6oN0eaMOsZPmyvx1zVA=
