@@ -44,6 +44,7 @@ require (
 	github.com/openrm/krakend-bloomd v0.0.0-20210716064324-815ce3f30e0a
 	github.com/openrm/krakend-sentry v0.0.0-20210719091511-65b801de7883
 	github.com/openrm/module-tracing-golang v1.1.2
+	go.opencensus.io v0.22.5
 	gocloud.dev/pubsub/kafkapubsub v0.21.0 // indirect
 	gocloud.dev/pubsub/natspubsub v0.21.0 // indirect
 	gocloud.dev/pubsub/rabbitpubsub v0.21.0 // indirect
@@ -58,5 +59,5 @@ replace (
 	github.com/devopsfaith/krakend-cel v1.4.0 => github.com/openrm/krakend-cel v0.0.0-20210719101150-9ec8a72804f1
 	github.com/devopsfaith/krakend-jose v1.4.0 => github.com/openrm/krakend-jose v0.0.0-20210719112350-52718b067cbd
 	github.com/devopsfaith/krakend-martian v1.4.0 => github.com/openrm/krakend-martian v0.0.0-20210718024057-b5801065122d
-	github.com/devopsfaith/krakend-opencensus v1.4.1 => github.com/openrm/krakend-opencensus v0.0.0-20210831072122-582d5d334306
+	github.com/devopsfaith/krakend-opencensus v1.4.1 => github.com/openrm/krakend-opencensus v0.0.0-20220329032425-f3055ba4b912
 )

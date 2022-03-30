@@ -23,6 +23,7 @@ import (
 )
 
 import (
+	"go.opencensus.io/plugin/ochttp/propagation/tracecontext"
 	"github.com/luraproject/lura/encoding"
 	"github.com/devopsfaith/krakend-ce/custom"
 )
@@ -52,7 +53,7 @@ func NewBackendFactoryWithContext(ctx context.Context, logger logging.Logger, me
 		} else {
 			clientFactory = httpcache.NewHTTPClient(cfg)
 		}
-		return opencensus.HTTPRequestExecutorFromConfigAndPropagation(clientFactory, cfg, custom.Propagation)
+		return opencensus.HTTPRequestExecutorFromConfigAndPropagation(clientFactory, cfg, &tracecontext.HTTPFormat{})
 	}
 	requestExecutorFactory = httprequestexecutor.HTTPRequestExecutor(logger, requestExecutorFactory)
 	requestExecutorFactory = martian.NewRequestExecutorFactory(logger, requestExecutorFactory)

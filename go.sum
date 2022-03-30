@@ -1752,6 +1752,8 @@ github.com/openrm/krakend-opencensus v0.0.0-20210722114353-8077e734592c h1:V1oH8
 github.com/openrm/krakend-opencensus v0.0.0-20210722114353-8077e734592c/go.mod h1:7vR9KOShn0YZTx9s69Dn1ROl6wmLJQyHMilZo2XRPNU=
 github.com/openrm/krakend-opencensus v0.0.0-20210831072122-582d5d334306 h1:xCvNBtwtErtuOizC26KoWhiOztQBFOe+7wrtsy77lIU=
 github.com/openrm/krakend-opencensus v0.0.0-20210831072122-582d5d334306/go.mod h1:7vR9KOShn0YZTx9s69Dn1ROl6wmLJQyHMilZo2XRPNU=
+github.com/openrm/krakend-opencensus v0.0.0-20220329032425-f3055ba4b912 h1:KMuGwbT4YbH/k9ohA/6ELQaoOynncytSgg3apFSeVCM=
+github.com/openrm/krakend-opencensus v0.0.0-20220329032425-f3055ba4b912/go.mod h1:7vR9KOShn0YZTx9s69Dn1ROl6wmLJQyHMilZo2XRPNU=
 github.com/openrm/krakend-sentry v0.0.0-20210719091511-65b801de7883 h1:CjyY9MO+Uoi4+FUxS4tfYe1w+FXHbOBfMm4v9ISYROo=
 github.com/openrm/krakend-sentry v0.0.0-20210719091511-65b801de7883/go.mod h1:JK8Y587Zz9cZfE5eOTbu4cfYZ3Ob57+q85TrQm4SGIo=
 github.com/openrm/module-tracing-golang v1.1.2 h1:EKAKpdvRXTwrdiPvN08l1Ks6bXrVMnSJDnwCNN56UpU=
