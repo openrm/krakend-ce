@@ -41,7 +41,7 @@ require (
 	github.com/kpacha/opencensus-influxdb v0.0.0-20181102202715-663e2683a27c // indirect
 	github.com/letgoapp/krakend-consul v0.0.0-20190130102841-7623a4da32a1 // indirect
 	github.com/luraproject/lura v1.4.1
-	github.com/openrm/krakend-bloomd v0.0.0-20210716064324-815ce3f30e0a
+	github.com/openrm/krakend-bloomd v0.0.0-20220413100214-393bc6a61c2c
 	github.com/openrm/krakend-sentry v0.0.0-20210719091511-65b801de7883
 	github.com/openrm/module-tracing-golang v1.1.2
 	go.opencensus.io v0.22.5

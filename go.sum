@@ -1736,6 +1736,8 @@ github.com/openrm/krakend-bloomd v0.0.0-20210716060824-38255823881f h1:m+g8Wi/Er
 github.com/openrm/krakend-bloomd v0.0.0-20210716060824-38255823881f/go.mod h1:5ynUsHwc4o2P0Gg7TUL7cG0cah2v722utugyfNtU+Q0=
 github.com/openrm/krakend-bloomd v0.0.0-20210716064324-815ce3f30e0a h1:aKEj4ez9ryEDoeIwHUd8jiPw6oN0eaMOsZPmyvx1zVA=
 github.com/openrm/krakend-bloomd v0.0.0-20210716064324-815ce3f30e0a/go.mod h1:5ynUsHwc4o2P0Gg7TUL7cG0cah2v722utugyfNtU+Q0=
+github.com/openrm/krakend-bloomd v0.0.0-20220413100214-393bc6a61c2c h1:qpiOIPTah316/odp9nR/uR169SN83kg790BD/MHTc2s=
+github.com/openrm/krakend-bloomd v0.0.0-20220413100214-393bc6a61c2c/go.mod h1:5ynUsHwc4o2P0Gg7TUL7cG0cah2v722utugyfNtU+Q0=
 github.com/openrm/krakend-cel v0.0.0-20210719101150-9ec8a72804f1 h1:PDXTYybodYQNUVpkievlxqSUxPen/0pU1OJsFxDR3PM=
 github.com/openrm/krakend-cel v0.0.0-20210719101150-9ec8a72804f1/go.mod h1:bt/ODioMmOzZ7jZvL8Fm8zjYujw9ShYbWq8/3kgNqLY=
 github.com/openrm/krakend-jose v0.0.0-20210719112350-52718b067cbd h1:38VrXcpEJ2phv6YDnFntbbgcseaE9WwfDChs2LNFoUY=
