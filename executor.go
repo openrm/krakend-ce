@@ -9,7 +9,7 @@ import (
 	"time"
 
 	krakendbf "github.com/devopsfaith/bloomfilter/krakend"
-	cel "github.com/devopsfaith/krakend-cel"
+	// cel "github.com/devopsfaith/krakend-cel"
 	cmd "github.com/devopsfaith/krakend-cobra"
 	cors "github.com/devopsfaith/krakend-cors/gin"
 	gelf "github.com/devopsfaith/krakend-gelf"
@@ -37,6 +37,10 @@ import (
 	krakendrouter "github.com/luraproject/lura/router"
 	router "github.com/luraproject/lura/router/gin"
 	server "github.com/luraproject/lura/transport/http/server/plugin"
+)
+
+import (
+	"github.com/openrm/krakend-bloomd"
 )
 
 // NewExecutor returns an executor for the cmd package. The executor initalizes the entire gateway by
@@ -261,17 +265,21 @@ type BloomFilterJWT struct{}
 // rejecter factory with the created token rejecter and other based on the CEL component.
 func (t BloomFilterJWT) NewTokenRejecter(ctx context.Context, cfg config.ServiceConfig, l logging.Logger, reg func(n string, p int)) (jose.ChainedRejecterFactory, error) {
 	rejecter, err := krakendbf.Register(ctx, "krakend-bf", cfg, l, reg)
+	reject, err := bloomd.Register(cfg, l)
 
 	return jose.ChainedRejecterFactory([]jose.RejecterFactory{
 		jose.RejecterFactoryFunc(func(_ logging.Logger, _ *config.EndpointConfig) jose.Rejecter {
 			return jose.RejecterFunc(rejecter.RejectToken)
 		}),
-		jose.RejecterFactoryFunc(func(l logging.Logger, cfg *config.EndpointConfig) jose.Rejecter {
-			if r := cel.NewRejecter(l, cfg); r != nil {
-				return r
-			}
-			return jose.FixedRejecter(false)
+		jose.RejecterFactoryFunc(func(_ logging.Logger, _ *config.EndpointConfig) jose.Rejecter {
+			return reject
 		}),
+		// jose.RejecterFactoryFunc(func(l logging.Logger, cfg *config.EndpointConfig) jose.Rejecter {
+		// 	if r := cel.NewRejecter(l, cfg); r != nil {
+		// 		return r
+		// 	}
+		// 	return jose.FixedRejecter(false)
+		// }),
 	}), err
 }
 

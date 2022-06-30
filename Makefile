@@ -95,6 +95,9 @@ build_on_docker:
 docker:
 	docker build --pull -t devopsfaith/krakend:${VERSION} .
 
+docker_alpine:
+	docker build --pull -t devopsfaith/krakend:${VERSION} --file Dockerfile.alpine .
+
 builder/skel/%/etc/init.d/krakend: builder/files/krakend.init
 	mkdir -p "$(dir $@)"
 	cp builder/files/krakend.init "$@"
