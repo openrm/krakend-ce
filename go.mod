@@ -34,6 +34,7 @@ require (
 	github.com/krakendio/krakend-viper/v2 v2.0.1
 	github.com/krakendio/krakend-xml/v2 v2.0.1
 	github.com/luraproject/lura/v2 v2.2.2
+	github.com/openrm/krakend-bloomd v0.0.0-20220512030205-8c7d10658f88
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 )
 
@@ -76,7 +77,7 @@ require (
 	github.com/alexeyco/binder v0.0.0-20180729220023-2a21303f588a // indirect
 	github.com/andybalholm/cascadia v1.1.0 // indirect
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220418222510-f25a4f6275ed // indirect
-	github.com/apache/thrift v0.12.0 // indirect
+	github.com/apache/thrift v0.15.0 // indirect
 	github.com/armon/go-metrics v0.3.10 // indirect
 	github.com/armon/go-radix v1.0.0 // indirect
 	github.com/auth0-community/go-auth0 v1.0.0 // indirect
@@ -104,6 +105,7 @@ require (
 	github.com/danwakefield/fnmatch v0.0.0-20160403171240-cbb64ac3d964 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/devigned/tab v0.1.1 // indirect
+	github.com/devopsfaith/krakend-jose/v2 v2.0.2 // indirect
 	github.com/dimchansky/utfbom v1.1.1 // indirect
 	github.com/dlclark/regexp2 v1.1.6 // indirect
 	github.com/eapache/go-resiliency v1.2.0 // indirect
@@ -111,6 +113,7 @@ require (
 	github.com/eapache/queue v1.1.0 // indirect
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
+	github.com/geetarista/go-bloomd v0.0.0-20140722181834-7f8e8a358bec // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
@@ -182,8 +185,8 @@ require (
 	github.com/nats-io/nuid v1.0.1 // indirect
 	github.com/oklog/run v1.1.0 // indirect
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7 // indirect
-	github.com/openzipkin/zipkin-go v0.1.6 // indirect
-	github.com/pelletier/go-toml v1.2.0 // indirect
+	github.com/openzipkin/zipkin-go v0.2.2 // indirect
+	github.com/pelletier/go-toml v1.4.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.1 // indirect
 	github.com/philhofer/fwd v1.0.0 // indirect
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
@@ -197,7 +200,7 @@ require (
 	github.com/ryanuber/go-glob v1.0.0 // indirect
 	github.com/santhosh-tekuri/jsonschema/v5 v5.0.0 // indirect
 	github.com/sony/gobreaker v0.4.1 // indirect
-	github.com/spf13/afero v1.1.2 // indirect
+	github.com/spf13/afero v1.2.2 // indirect
 	github.com/spf13/cast v1.3.0 // indirect
 	github.com/spf13/cobra v1.0.0 // indirect
 	github.com/spf13/jwalterweatherman v1.0.0 // indirect
