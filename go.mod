@@ -260,8 +260,9 @@ replace github.com/auth0-community/go-auth0 v1.0.0 => github.com/devopsfaith/go-
 replace github.com/alexeyco/binder v0.0.0-20180729220023-2a21303f588a => github.com/kpacha/binder v0.0.0-20220707194437-6013d1173c4d
 
 replace (
+	github.com/krakendio/krakend-amqp/v2 v2.0.2 => github.com/openrm/krakend-amqp/v2 v2.0.2-mod.1
 	github.com/krakendio/krakend-cel/v2 v2.0.1 => github.com/openrm/krakend-cel/v2 v2.0.1-mod.1
 	github.com/krakendio/krakend-jose/v2 v2.0.4 => github.com/openrm/krakend-jose/v2 v2.0.4-mod.2
-	github.com/krakendio/krakend-opencensus/v2 v2.0.1 => github.com/openrm/krakend-opencensus/v2 v2.0.1-mod.2
 	github.com/krakendio/krakend-martian/v2 v2.0.1 => github.com/openrm/krakend-martian/v2 v2.0.1-mod.1
+	github.com/krakendio/krakend-opencensus/v2 v2.0.1 => github.com/openrm/krakend-opencensus/v2 v2.0.1-mod.2
 )
