@@ -37,6 +37,7 @@ require (
 	github.com/krakend/krakend-xml/v2 v2.2.2
 	github.com/luraproject/lura/v2 v2.14.2-0.20260316170719-6d79b4ef723b
 	github.com/openrm/krakend-bloomd v0.0.0-20220512030205-8c7d10658f88
+	github.com/openrm/krakend-sentry/v2 v2.0.2-alpha
 	github.com/santhosh-tekuri/jsonschema/v6 v6.0.2
 	github.com/spf13/cobra v1.8.1
 	golang.org/x/sync v0.22.0
@@ -122,6 +123,7 @@ require (
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.12 // indirect
 	github.com/geetarista/go-bloomd v0.0.0-20140722181834-7f8e8a358bec // indirect
+	github.com/getsentry/sentry-go v0.11.0 // indirect
 	github.com/gin-contrib/sse v1.1.0 // indirect
 	github.com/go-jose/go-jose/v3 v3.0.5 // indirect
 	github.com/go-jose/go-jose/v4 v4.1.4 // indirect
