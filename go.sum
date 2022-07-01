@@ -935,6 +935,8 @@ github.com/onsi/gomega v1.4.3/go.mod h1:ex+gbHU/CVuBBDIJjb2X0qEXbFg53c61hWP/1Cpa
 github.com/onsi/gomega v1.7.1/go.mod h1:XdKZgCCFLUoM/7CFJVPcG8C1xQ1AJ0vpAezJrB7JYyY=
 github.com/op/go-logging v0.0.0-20160315200505-970db520ece7 h1:lDH9UUVJtmYCjyT0CI4q8xvlXPxeZ0gYCVvWbmPlp88=
 github.com/op/go-logging v0.0.0-20160315200505-970db520ece7/go.mod h1:HzydrMdWErDVzsI23lYNej1Htcns9BCg93Dk0bBINWk=
+github.com/openrm/krakend-amqp/v2 v2.0.2-mod.1 h1:/WY6gBcmDWGXNERCHeLSKgKkLet0Y0cx6ikTC2E4VbY=
+github.com/openrm/krakend-amqp/v2 v2.0.2-mod.1/go.mod h1:O49sUTzhUejlUrepvOzwShQ2uqGSz2wLLAhMgPacV7o=
 github.com/openrm/krakend-bloomd v0.0.0-20220512030205-8c7d10658f88 h1:fKjvln6f1FHTtCtk96WjldzMzENJuMjnxb94k64s+vs=
 github.com/openrm/krakend-bloomd v0.0.0-20220512030205-8c7d10658f88/go.mod h1:FtLd5phIJ0leRLJkP62P8IY5f4OklCqwEcchawKjcZA=
 github.com/openrm/krakend-bloomd v0.0.0-20220630063658-245aca04c05f h1:fGeLXYdoFiTOS6kcKbXdh+N7FqAm0olPf77UenyQJXU=
