@@ -263,4 +263,5 @@ replace (
 	github.com/krakendio/krakend-cel/v2 v2.0.1 => github.com/openrm/krakend-cel/v2 v2.0.1-mod.1
 	github.com/krakendio/krakend-jose/v2 v2.0.4 => github.com/openrm/krakend-jose/v2 v2.0.4-mod.2
 	github.com/krakendio/krakend-opencensus/v2 v2.0.1 => github.com/openrm/krakend-opencensus/v2 v2.0.1-mod.2
+	github.com/krakendio/krakend-martian/v2 v2.0.1 => github.com/openrm/krakend-martian/v2 v2.0.1-mod.1
 )

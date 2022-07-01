@@ -1308,6 +1308,8 @@ github.com/openrm/krakend-bloomd/v2 v2.0.0-alpha/go.mod h1:5a2QWDSOD1ReKC/daJGsO
 github.com/openrm/krakend-cel/v2 v2.0.1-mod.1 h1:Fkn77sPmMr8GvojP5Ta/RzHV+iOh5mekYpC0uGWI8gM=
 github.com/openrm/krakend-cel/v2 v2.0.1-mod.1/go.mod h1:TuOf89sSyRkpQWjSoEOTDjWpWDJlUccSF2i58QBmfSA=
 github.com/openrm/krakend-jose/v2 v2.0.4-mod.2/go.mod h1:PGAbTUHFcciVAfArcTipfbZEuyLWuYTs94sG6+Q08LQ=
+github.com/openrm/krakend-martian/v2 v2.0.1-mod.1 h1:4h26k12cK+NgwQdtyZxyldTivI/Z4N/MYVXGyru0Lxc=
+github.com/openrm/krakend-martian/v2 v2.0.1-mod.1/go.mod h1:s24L895PD96CHANADEWcmL+A5mwJ7HnKpVQbJCN9sWE=
 github.com/openrm/krakend-opencensus/v2 v2.0.1-mod.2 h1:HejGb10BvBkHr7Mg8A1QF/vEpFwsbSQmM7bIMSku5sk=
 github.com/openrm/krakend-opencensus/v2 v2.0.1-mod.2/go.mod h1:0rMXvhioPX1HFiwacKQMTfBkPRXaW1xqJM3lZc5B6NM=
 github.com/openrm/krakend-sentry/v2 v2.0.2-alpha h1:g23OvLwQGFw9xhC+Gprm/sONtkopGB80itmdiPBYvkM=
