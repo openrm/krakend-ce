@@ -581,8 +581,6 @@ github.com/krakend/krakend-audit v0.9.3 h1:rNuIDe75rMRbH0lHhdZy87VGCEBeIpUW6pZrL
 github.com/krakend/krakend-audit v0.9.3/go.mod h1:42Xh9M14M8x7y+wUgbnSkQjuTcayl8NwhQU+j8/RqlU=
 github.com/krakend/krakend-botdetector/v2 v2.3.1 h1:Nd7z3iKpGMTU49lp8Mh/QvhNUA67QDHEXHC+dCf9TMM=
 github.com/krakend/krakend-botdetector/v2 v2.3.1/go.mod h1:9qadSXt1lwkLU6Vc7NgDNBHLPeCH6KNFR/imTUYrPMg=
-github.com/krakend/krakend-cel/v2 v2.4.1 h1:j5EbE6a+GOBwaltJUvMugJTiblXF8xP9LxWlQd3yAR4=
-github.com/krakend/krakend-cel/v2 v2.4.1/go.mod h1:qn8pedhxFBUfx762wusV+svTMB6oiw4pE8DdFNhwFsw=
 github.com/krakend/krakend-circuitbreaker/v3 v3.0.0 h1:fUnHI1+47/MMF5aAkbEQ5iD7VZy7HvCEDFp0fF8vGVs=
 github.com/krakend/krakend-circuitbreaker/v3 v3.0.0/go.mod h1:Fg7/0jmY+rAWPCg3XcWlKy77lhjNJgkRBipnvGJAVcQ=
 github.com/krakend/krakend-cobra/v2 v2.8.2 h1:RoV3fRlT9vDFq1nVt40E/hc9c4cuM6INSR9UnEc9AQI=
@@ -601,8 +599,6 @@ github.com/krakend/krakend-httpsecure/v2 v2.2.1 h1:8jp1WMK4HYCyeSVrtrnK/D/dNJSv7
 github.com/krakend/krakend-httpsecure/v2 v2.2.1/go.mod h1:we0k45m8lbOBWdNSJM7FKO8UlP9MdG8gUdSkh+4bzt4=
 github.com/krakend/krakend-influx/v2 v2.2.0 h1:rLRjKZOC3Z+YktthQ4GC1/7AG0Vdre039nwva5utJ0Q=
 github.com/krakend/krakend-influx/v2 v2.2.0/go.mod h1:4MBZmyPNfyfbu0fFcCPtuqjrLpQ+IPukkTKnH55RXxs=
-github.com/krakend/krakend-jose/v2 v2.12.3 h1:SowBPHj66n9P2Uchc4TVXge4v3sQKSB8J+hZjEKXi3k=
-github.com/krakend/krakend-jose/v2 v2.12.3/go.mod h1:ikaO8KrlSdXjSVRhNNpEPcVZDBgDygln3V4qPrn3xKc=
 github.com/krakend/krakend-jsonschema/v2 v2.2.1 h1:gg5wOKgfiLoh6xvQkVo16QowO9y8loBsEpDDKwELW1I=
 github.com/krakend/krakend-jsonschema/v2 v2.2.1/go.mod h1:I3iBsSUtL6jsM++jPhbmJzQ1MS5s2WCKg+ijDQffmKU=
 github.com/krakend/krakend-koanf v0.1.1 h1:VGOqC2CpgNUuxvL7iMnrFvas4pPOkiinWQUHhBp0/3k=
