@@ -83,7 +83,6 @@ require (
 	github.com/alecthomas/chroma v0.10.0 // indirect
 	github.com/andybalholm/cascadia v1.3.2 // indirect
 	github.com/antlr4-go/antlr/v4 v4.13.1 // indirect
-	github.com/auth0-community/go-auth0 v1.0.0 // indirect
 	github.com/aws/aws-sdk-go v1.55.8 // indirect
 	github.com/aws/aws-sdk-go-v2 v1.41.4 // indirect
 	github.com/aws/aws-sdk-go-v2/config v1.32.12 // indirect
@@ -187,7 +186,6 @@ require (
 	github.com/krakend/go-auth0/v2 v2.0.4 // indirect
 	github.com/krakend/httpcache v1.1.1 // indirect
 	github.com/krakend/lru v0.0.0-20250121172718-0e3a6eab620d // indirect
-	github.com/krakendio/krakend-jose/v2 v2.0.4 // indirect
 	github.com/kylelemons/godebug v1.1.0 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
@@ -289,12 +287,15 @@ require (
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/DataDog/dd-trace-go.v1 v1.62.0 // indirect
 	gopkg.in/Graylog2/go-gelf.v2 v2.0.0-20191017102106-1550ee647df0 // indirect
-	gopkg.in/square/go-jose.v2 v2.6.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
 
 replace github.com/krakend/krakend-jose/v2 => /home/naggingant/dev/krakend-jose
 
+replace github.com/openrm/krakend-bloomd/v2 => /tmp/krakend-bloomd-patched
+
 replace github.com/krakend/krakend-cel/v2 => /home/naggingant/dev/krakend-cel
 
 replace github.com/krakend/krakend-opencensus/v2 => /home/naggingant/dev/krakend-opencensus
+
+replace github.com/krakend/krakend-martian/v2 => /home/naggingant/dev/krakend-martian
