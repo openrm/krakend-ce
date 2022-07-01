@@ -23,6 +23,10 @@ import (
 	httprequestexecutor "github.com/luraproject/lura/v2/transport/http/client/plugin"
 )
 
+import (
+	"go.opencensus.io/plugin/ochttp/propagation/tracecontext"
+)
+
 // NewBackendFactory creates a BackendFactory by stacking all the available middlewares:
 // - oauth2 client credentials
 // - http cache
@@ -48,7 +52,7 @@ func NewBackendFactoryWithContext(ctx context.Context, logger logging.Logger, me
 		} else {
 			clientFactory = httpcache.NewHTTPClient(cfg, clientFactory)
 		}
-		return opencensus.HTTPRequestExecutorFromConfig(clientFactory, cfg)
+		return opencensus.HTTPRequestExecutorFromConfigAndPropagation(clientFactory, cfg, &tracecontext.HTTPFormat{})
 	}
 	requestExecutorFactory = httprequestexecutor.HTTPRequestExecutor(logger, requestExecutorFactory)
 	backendFactory := martian.NewConfiguredBackendFactory(logger, requestExecutorFactory)
