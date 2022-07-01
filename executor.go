@@ -49,7 +49,7 @@ import (
 )
 
 import (
-	"github.com/openrm/krakend-bloomd"
+	"github.com/openrm/krakend-bloomd/v2"
 )
 
 // NewExecutor returns an executor for the cmd package. The executor initalizes the entire gateway by
