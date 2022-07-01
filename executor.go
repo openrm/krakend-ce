@@ -15,7 +15,7 @@ import (
 	krakendbf "github.com/krakend/bloomfilter/v2/krakend"
 	asyncamqp "github.com/krakend/krakend-amqp/v2/async"
 	audit "github.com/krakend/krakend-audit"
-	cel "github.com/krakend/krakend-cel/v2"
+	// cel "github.com/krakend/krakend-cel/v2"
 	cmd "github.com/krakend/krakend-cobra/v2"
 	cors "github.com/krakend/krakend-cors/v2/gin"
 	gelf "github.com/krakend/krakend-gelf/v2"
@@ -380,12 +380,14 @@ func (BloomFilterJWT) NewTokenRejecter(ctx context.Context, cfg config.ServiceCo
 		jose.RejecterFactoryFunc(func(_ logging.Logger, _ *config.EndpointConfig) jose.Rejecter {
 			return bloomdReject
 		}),
+		/*
 		jose.RejecterFactoryFunc(func(l logging.Logger, cfg *config.EndpointConfig) jose.Rejecter {
 			if r := cel.NewRejecter(l, cfg); r != nil {
 				return r
 			}
 			return jose.FixedRejecter(false)
 		}),
+		*/
 	}), err
 }
 
