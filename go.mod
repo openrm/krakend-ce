@@ -34,7 +34,7 @@ require (
 	github.com/krakendio/krakend-viper/v2 v2.0.1
 	github.com/krakendio/krakend-xml/v2 v2.0.1
 	github.com/luraproject/lura/v2 v2.2.2
-	github.com/openrm/krakend-bloomd v0.0.0-20220512030205-8c7d10658f88
+	github.com/openrm/krakend-bloomd/v2 v2.0.0-alpha
 	github.com/openrm/krakend-sentry/v2 v2.0.2-alpha
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 )
@@ -106,7 +106,6 @@ require (
 	github.com/danwakefield/fnmatch v0.0.0-20160403171240-cbb64ac3d964 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/devigned/tab v0.1.1 // indirect
-	github.com/devopsfaith/krakend-jose/v2 v2.0.2 // indirect
 	github.com/dimchansky/utfbom v1.1.1 // indirect
 	github.com/dlclark/regexp2 v1.1.6 // indirect
 	github.com/eapache/go-resiliency v1.2.0 // indirect
