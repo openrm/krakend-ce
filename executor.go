@@ -46,6 +46,7 @@ import (
 
 import (
 	"github.com/openrm/krakend-bloomd/v2"
+	customlogging "github.com/krakendio/krakend-ce/v2/custom/logging"
 )
 
 // NewExecutor returns an executor for the cmd package. The executor initalizes the entire gateway by
@@ -187,6 +188,7 @@ func (e *ExecutorBuilder) NewCmdExecutor(ctx context.Context) cmd.Executor {
 		routerFactory := router.NewFactory(router.Config{
 			Engine: e.EngineFactory.NewEngine(cfg, router.EngineOptions{
 				Logger: logger,
+				Formatter: customlogging.GetFormatter(cfg),
 				Writer: gelfWriter,
 				Health: (<-chan string)(agentPing),
 			}),
