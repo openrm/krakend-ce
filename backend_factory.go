@@ -24,6 +24,10 @@ import (
 	httprequestexecutor "github.com/luraproject/lura/v2/transport/http/client/plugin"
 )
 
+import (
+	"go.opencensus.io/plugin/ochttp/propagation/tracecontext"
+)
+
 // NewBackendFactory creates a BackendFactory by stacking all the available middlewares:
 // - oauth2 client credentials
 // - http cache
@@ -50,7 +54,7 @@ func newRequestExecutorFactory(ctx context.Context, logger logging.Logger) func(
 		clientFactory = httpcache.NewHTTPClient(cfg, clientFactory)
 		clientFactory = otellura.InstrumentedHTTPClientFactory(clientFactory, cfg)
 		// TODO: check what happens if we have both, opencensus and otel enabled ?
-		return opencensus.HTTPRequestExecutorFromConfig(clientFactory, cfg)
+		return opencensus.HTTPRequestExecutorFromConfigAndPropagation(clientFactory, cfg, &tracecontext.HTTPFormat{})
 	}
 	return httprequestexecutor.HTTPRequestExecutorWithContext(ctx, logger, requestExecutorFactory)
 }

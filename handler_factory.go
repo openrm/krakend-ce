@@ -20,6 +20,8 @@ import (
 )
 
 import (
+	"go.opencensus.io/plugin/ochttp/propagation/tracecontext"
+
 	sentry "github.com/openrm/krakend-sentry/v2/gin"
 	"github.com/krakend/krakend-ce/v2/custom"
 )
@@ -32,7 +34,7 @@ func NewHandlerFactory(logger logging.Logger, metricCollector *metrics.Metrics, 
 	handlerFactory = lua.HandlerFactory(logger, handlerFactory)
 	handlerFactory = ginjose.HandlerFactory(handlerFactory, logger, rejecter, custom.StatusRejecterFactory)
 	handlerFactory = metricCollector.NewHTTPHandlerFactory(handlerFactory)
-	handlerFactory = opencensus.New(handlerFactory)
+	handlerFactory = opencensus.NewWithPropagation(handlerFactory, &tracecontext.HTTPFormat{})
 	handlerFactory = botdetector.New(handlerFactory, logger)
 
 	return func(cfg *config.EndpointConfig, p proxy.Proxy) gin.HandlerFunc {

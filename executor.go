@@ -50,7 +50,7 @@ import (
 
 import (
 	"github.com/openrm/krakend-bloomd/v2"
-	customlogging "github.com/krakendio/krakend-ce/v2/custom/logging"
+	customlogging "github.com/krakend/krakend-ce/v2/custom/logging"
 )
 
 // NewExecutor returns an executor for the cmd package. The executor initalizes the entire gateway by
