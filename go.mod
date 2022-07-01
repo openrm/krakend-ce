@@ -36,6 +36,7 @@ require (
 	github.com/luraproject/lura/v2 v2.2.2
 	github.com/openrm/krakend-bloomd/v2 v2.0.0-alpha
 	github.com/openrm/krakend-sentry/v2 v2.0.2-alpha
+	go.opencensus.io v0.23.0
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 )
 
@@ -225,7 +226,6 @@ require (
 	github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415 // indirect
 	github.com/xeipuuv/gojsonschema v1.2.1-0.20200424115421-065759f9c3d7 // indirect
 	github.com/yuin/gopher-lua v0.0.0-20190206043414-8bfc7677f583 // indirect
-	go.opencensus.io v0.23.0 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
 	gocloud.dev v0.25.0 // indirect
 	gocloud.dev/pubsub/kafkapubsub v0.25.0 // indirect
@@ -262,4 +262,5 @@ replace github.com/alexeyco/binder v0.0.0-20180729220023-2a21303f588a => github.
 replace (
 	github.com/krakendio/krakend-cel/v2 v2.0.1 => github.com/openrm/krakend-cel/v2 v2.0.1-mod.1
 	github.com/krakendio/krakend-jose/v2 v2.0.4 => github.com/openrm/krakend-jose/v2 v2.0.4-mod.2
+	github.com/krakendio/krakend-opencensus/v2 v2.0.1 => github.com/openrm/krakend-opencensus/v2 v2.0.1-mod.2
 )

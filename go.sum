@@ -1124,8 +1124,6 @@ github.com/krakendio/krakend-metrics/v2 v2.0.1 h1:BFGsbw/Qghfw0OD2+fFRcyavuHWwp7
 github.com/krakendio/krakend-metrics/v2 v2.0.1/go.mod h1:FI79Wv/v1Eq/5jHqOav8dL5jGwNxoG7pTxfJ8GfRUL0=
 github.com/krakendio/krakend-oauth2-clientcredentials/v2 v2.0.1 h1:eC5Nj5KWfI0iO9l8PQ2TYln0MbkmTdvaHqWCz80LUzM=
 github.com/krakendio/krakend-oauth2-clientcredentials/v2 v2.0.1/go.mod h1:E8/TdBssEIiOB0eEUc+vl9JUfPdumkOYMdpFBPDZ6V8=
-github.com/krakendio/krakend-opencensus/v2 v2.0.1 h1:DOu12tJ8Rlo/fpamhxmXUL+Ju5UWgl2s2U3bHFIAj0g=
-github.com/krakendio/krakend-opencensus/v2 v2.0.1/go.mod h1:0rMXvhioPX1HFiwacKQMTfBkPRXaW1xqJM3lZc5B6NM=
 github.com/krakendio/krakend-pubsub/v2 v2.0.1 h1:vuk2oUzgEBUz1aSO+n8C/GagkUvwI/ZAT7aQwn2zUN8=
 github.com/krakendio/krakend-pubsub/v2 v2.0.1/go.mod h1:gf6xDIfnS1OBA7ckD+2ybrTSRP2c6/OOA0bJrRSotnE=
 github.com/krakendio/krakend-ratelimit/v2 v2.0.4 h1:nDO3GieLejn274w3LBhHp12PcP2S0udZMfpw3iqUQoc=
@@ -1310,6 +1308,8 @@ github.com/openrm/krakend-bloomd/v2 v2.0.0-alpha/go.mod h1:5a2QWDSOD1ReKC/daJGsO
 github.com/openrm/krakend-cel/v2 v2.0.1-mod.1 h1:Fkn77sPmMr8GvojP5Ta/RzHV+iOh5mekYpC0uGWI8gM=
 github.com/openrm/krakend-cel/v2 v2.0.1-mod.1/go.mod h1:TuOf89sSyRkpQWjSoEOTDjWpWDJlUccSF2i58QBmfSA=
 github.com/openrm/krakend-jose/v2 v2.0.4-mod.2/go.mod h1:PGAbTUHFcciVAfArcTipfbZEuyLWuYTs94sG6+Q08LQ=
+github.com/openrm/krakend-opencensus/v2 v2.0.1-mod.2 h1:HejGb10BvBkHr7Mg8A1QF/vEpFwsbSQmM7bIMSku5sk=
+github.com/openrm/krakend-opencensus/v2 v2.0.1-mod.2/go.mod h1:0rMXvhioPX1HFiwacKQMTfBkPRXaW1xqJM3lZc5B6NM=
 github.com/openrm/krakend-sentry/v2 v2.0.2-alpha h1:g23OvLwQGFw9xhC+Gprm/sONtkopGB80itmdiPBYvkM=
 github.com/openrm/krakend-sentry/v2 v2.0.2-alpha/go.mod h1:bJjq0Dk9oFu+Wou+zqJ2KsnFJq0sonAfAEuTV2T0Lmg=
 github.com/opentracing-contrib/go-observer v0.0.0-20170622124052-a52f23424492/go.mod h1:Ngi6UdF0k5OKD5t5wlmGhe/EDKPoUM3BXZSSfIuJbis=
