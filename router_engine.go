@@ -15,6 +15,10 @@ import (
 	"github.com/luraproject/lura/v2/transport/http/server"
 )
 
+import (
+	sentry "github.com/openrm/krakend-sentry/v2/gin"
+)
+
 // NewEngine creates a new gin engine with some default values and a secure middleware
 func NewEngine(cfg config.ServiceConfig, opt luragin.EngineOptions) *gin.Engine {
 	engine := luragin.NewEngine(cfg, opt)
@@ -44,6 +48,8 @@ func NewEngine(cfg config.ServiceConfig, opt luragin.EngineOptions) *gin.Engine 
 	lua.Register(opt.Logger, cfg.ExtraConfig, engine)
 
 	botdetector.Register(cfg, opt.Logger, engine)
+
+	sentry.Register(cfg, opt.Logger, engine)
 
 	return engine
 }
