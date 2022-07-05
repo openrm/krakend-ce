@@ -58,7 +58,7 @@ func GetFormatter(cfg config.ServiceConfig) gin.LogFormatter {
 	)
 	if cfg, ok := ConfigGetter(cfg.ExtraConfig).(Config); ok {
 		for _, v := range cfg.HeaderBlacklist {
-			if exp, err := regexp.Compile(v); err == nil {
+			if exp, err := regexp.Compile("(?i)" + v); err == nil {
 				blacklist = append(blacklist, exp)
 			}
 		}
