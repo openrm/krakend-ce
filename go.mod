@@ -34,6 +34,9 @@ require (
 	github.com/krakendio/krakend-viper/v2 v2.0.1
 	github.com/krakendio/krakend-xml/v2 v2.0.1
 	github.com/luraproject/lura/v2 v2.0.5
+	github.com/openrm/krakend-bloomd/v2 v2.0.0-alpha
+	github.com/openrm/krakend-sentry/v2 v2.0.2-alpha
+	go.opencensus.io v0.23.0
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 )
 
@@ -111,6 +114,8 @@ require (
 	github.com/eapache/queue v1.1.0 // indirect
 	github.com/fatih/color v1.13.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
+	github.com/geetarista/go-bloomd v0.0.0-20140722181834-7f8e8a358bec // indirect
+	github.com/getsentry/sentry-go v0.11.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
@@ -218,7 +223,6 @@ require (
 	github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415 // indirect
 	github.com/xeipuuv/gojsonschema v1.2.1-0.20200424115421-065759f9c3d7 // indirect
 	github.com/yuin/gopher-lua v0.0.0-20190206043414-8bfc7677f583 // indirect
-	go.opencensus.io v0.23.0 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
 	gocloud.dev v0.25.0 // indirect
 	gocloud.dev/pubsub/kafkapubsub v0.25.0 // indirect
@@ -239,7 +243,7 @@ require (
 	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/DataDog/dd-trace-go.v1 v1.22.0 // indirect
 	gopkg.in/Graylog2/go-gelf.v2 v2.0.0-20191017102106-1550ee647df0 // indirect
-	gopkg.in/ini.v1 v1.51.0 // indirect
+	gopkg.in/ini.v1 v1.51.1 // indirect
 	gopkg.in/square/go-jose.v2 v2.6.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	nhooyr.io/websocket v1.8.7 // indirect
@@ -248,3 +252,11 @@ require (
 replace github.com/gregjones/httpcache v0.0.0-20190611155906-901d90724c79 => github.com/m4ns0ur/httpcache v0.0.0-20200426190423-1040e2e8823f
 
 replace github.com/auth0-community/go-auth0 v1.0.0 => github.com/devopsfaith/go-auth0 v0.0.0-20220422124632-a1358a81b559
+
+replace (
+	github.com/krakendio/krakend-amqp/v2 v2.0.2 => github.com/openrm/krakend-amqp/v2 v2.0.2-mod.1
+	github.com/krakendio/krakend-cel/v2 v2.0.1 => github.com/openrm/krakend-cel/v2 v2.0.1-mod.1
+	github.com/krakendio/krakend-jose/v2 v2.0.4 => github.com/openrm/krakend-jose/v2 v2.0.4-mod.2
+	github.com/krakendio/krakend-opencensus/v2 v2.0.1 => github.com/openrm/krakend-opencensus/v2 v2.0.1-mod.2
+	github.com/krakendio/krakend-martian/v2 v2.0.1 => github.com/openrm/krakend-martian/v2 v2.0.1-mod.1
+)

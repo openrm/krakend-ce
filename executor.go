@@ -13,7 +13,7 @@ import (
 
 	krakendbf "github.com/krakendio/bloomfilter/v2/krakend"
 	asyncamqp "github.com/krakendio/krakend-amqp/v2/async"
-	cel "github.com/krakendio/krakend-cel/v2"
+	// cel "github.com/krakendio/krakend-cel/v2"
 	cmd "github.com/krakendio/krakend-cobra/v2"
 	cors "github.com/krakendio/krakend-cors/v2/gin"
 	gelf "github.com/krakendio/krakend-gelf/v2"
@@ -41,6 +41,11 @@ import (
 	router "github.com/luraproject/lura/v2/router/gin"
 	serverhttp "github.com/luraproject/lura/v2/transport/http/server"
 	server "github.com/luraproject/lura/v2/transport/http/server/plugin"
+)
+
+import (
+	"github.com/openrm/krakend-bloomd/v2"
+	customlogging "github.com/krakendio/krakend-ce/v2/custom/logging"
 )
 
 // NewExecutor returns an executor for the cmd package. The executor initalizes the entire gateway by
@@ -181,6 +186,7 @@ func (e *ExecutorBuilder) NewCmdExecutor(ctx context.Context) cmd.Executor {
 		routerFactory := router.NewFactory(router.Config{
 			Engine: e.EngineFactory.NewEngine(cfg, router.EngineOptions{
 				Logger: logger,
+				Formatter: customlogging.GetFormatter(cfg),
 				Writer: gelfWriter,
 				Health: (<-chan string)(agentPing),
 			}),
@@ -315,17 +321,23 @@ type BloomFilterJWT struct{}
 // rejecter factory with the created token rejecter and other based on the CEL component.
 func (BloomFilterJWT) NewTokenRejecter(ctx context.Context, cfg config.ServiceConfig, l logging.Logger, reg func(n string, p int)) (jose.ChainedRejecterFactory, error) {
 	rejecter, err := krakendbf.Register(ctx, "krakend-bf", cfg, l, reg)
+	bloomdReject, err := bloomd.Register(cfg, l)
 
 	return jose.ChainedRejecterFactory([]jose.RejecterFactory{
 		jose.RejecterFactoryFunc(func(_ logging.Logger, _ *config.EndpointConfig) jose.Rejecter {
 			return jose.RejecterFunc(rejecter.RejectToken)
 		}),
+		jose.RejecterFactoryFunc(func(_ logging.Logger, _ *config.EndpointConfig) jose.Rejecter {
+			return bloomdReject
+		}),
+		/*
 		jose.RejecterFactoryFunc(func(l logging.Logger, cfg *config.EndpointConfig) jose.Rejecter {
 			if r := cel.NewRejecter(l, cfg); r != nil {
 				return r
 			}
 			return jose.FixedRejecter(false)
 		}),
+		*/
 	}), err
 }
 
