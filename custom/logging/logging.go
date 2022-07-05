@@ -52,17 +52,14 @@ func filterHeaders(headers http.Header, blacklist []*regexp.Regexp) map[string]s
 }
 
 func GetFormatter(cfg config.ServiceConfig) gin.LogFormatter {
-	var (
-		blacklist []*regexp.Regexp
-		formatter gin.LogFormatter
-	)
+	var blacklist []*regexp.Regexp
 	if cfg, ok := ConfigGetter(cfg.ExtraConfig).(Config); ok {
 		for _, v := range cfg.HeaderBlacklist {
 			if exp, err := regexp.Compile("(?i)" + v); err == nil {
 				blacklist = append(blacklist, exp)
 			}
 		}
-		formatter = func(param gin.LogFormatterParams) string {
+		return func(param gin.LogFormatterParams) string {
 			r := param.Request
 			msg := fmt.Sprintf(
 				"[GIN] %v | %3d | %13v | %15s | %-7s  %#v\n%s",
@@ -100,5 +97,5 @@ func GetFormatter(cfg config.ServiceConfig) gin.LogFormatter {
 			return string(bs) + "\n"
 		}
 	}
-	return formatter
+	return nil
 }
