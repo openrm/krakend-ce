@@ -36,7 +36,7 @@ require (
 	github.com/krakend/krakend-usage/v2 v2.1.0
 	github.com/krakend/krakend-xml/v2 v2.2.2
 	github.com/luraproject/lura/v2 v2.14.2-0.20260316170719-6d79b4ef723b
-	github.com/openrm/krakend-bloomd/v2 v2.0.0-alpha
+	github.com/openrm/krakend-bloomd/v2 v2.0.1-0.20260925184057-0cefe63b0867
 	github.com/openrm/krakend-sentry/v2 v2.0.2-alpha
 	github.com/santhosh-tekuri/jsonschema/v6 v6.0.2
 	github.com/spf13/cobra v1.8.1
@@ -290,12 +290,10 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
 
-replace github.com/krakend/krakend-jose/v2 => /home/naggingant/dev/krakend-jose
+replace github.com/krakend/krakend-martian/v2 => ../krakend-martian
 
-replace github.com/openrm/krakend-bloomd/v2 => /home/naggingant/dev/krakend-bloomd
+replace github.com/krakend/krakend-jose/v2 => ../krakend-jose
 
-replace github.com/krakend/krakend-cel/v2 => /home/naggingant/dev/krakend-cel
+replace github.com/krakend/krakend-cel/v2 => ../krakend-cel
 
-replace github.com/krakend/krakend-opencensus/v2 => /home/naggingant/dev/krakend-opencensus
-
-replace github.com/krakend/krakend-martian/v2 => /home/naggingant/dev/krakend-martian
+replace github.com/krakend/krakend-opencensus/v2 => ../krakend-opencensus
