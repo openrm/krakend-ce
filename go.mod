@@ -292,7 +292,7 @@ require (
 
 replace github.com/krakend/krakend-jose/v2 => /home/naggingant/dev/krakend-jose
 
-replace github.com/openrm/krakend-bloomd/v2 => /tmp/krakend-bloomd-patched
+replace github.com/openrm/krakend-bloomd/v2 => /home/naggingant/dev/krakend-bloomd
 
 replace github.com/krakend/krakend-cel/v2 => /home/naggingant/dev/krakend-cel
 
