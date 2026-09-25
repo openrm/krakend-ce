@@ -4,7 +4,17 @@ FROM golang:${GOLANG_VERSION}-alpine${ALPINE_VERSION} as builder
 
 RUN apk --no-cache --virtual .build-deps add make gcc musl-dev binutils-gold
 
-COPY . /app
+# go.mod's krakend-jose/krakend-cel/krakend-opencensus/krakend-martian
+# replace directives point at ../krakend-<name> (see REBASE_PLAYBOOK.md --
+# their own module identity is inherited from upstream and doesn't match
+# where they're actually hosted, so a version-pinned replace can't be used).
+# The build context must therefore be the parent directory containing this
+# repo and all four sibling repos as checkouts, not just this repo alone.
+COPY krakend-ce /app
+COPY krakend-jose /krakend-jose
+COPY krakend-cel /krakend-cel
+COPY krakend-opencensus /krakend-opencensus
+COPY krakend-martian /krakend-martian
 WORKDIR /app
 
 RUN make build

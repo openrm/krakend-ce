@@ -1,0 +1,88 @@
+name: Weekly image build & Trivy scan
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 3 * * 1'
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+concurrency:
+  group: build-and-scan-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout krakend-ce
+        uses: actions/checkout@v4
+        with:
+          path: krakend-ce
+
+      # go.mod's krakend-jose/krakend-cel/krakend-opencensus/krakend-martian
+      # replace directives point at ../krakend-<name> (see
+      # krakend-ce/REBASE_PLAYBOOK.md for why a version-pinned replace can't
+      # be used for these four) -- the build needs them checked out as
+      # siblings of krakend-ce, in the same layout the Dockerfile expects.
+      - name: Checkout krakend-jose
+        uses: actions/checkout@v4
+        with:
+          repository: openrm/krakend-jose
+          path: krakend-jose
+      - name: Checkout krakend-cel
+        uses: actions/checkout@v4
+        with:
+          repository: openrm/krakend-cel
+          path: krakend-cel
+      - name: Checkout krakend-opencensus
+        uses: actions/checkout@v4
+        with:
+          repository: openrm/krakend-opencensus
+          path: krakend-opencensus
+      - name: Checkout krakend-martian
+        uses: actions/checkout@v4
+        with:
+          repository: openrm/krakend-martian
+          path: krakend-martian
+
+      - name: Set the environment variables
+        working-directory: krakend-ce
+        run: |
+          echo "GOLANG_VERSION=$(grep -m 1 GOLANG_VERSION Makefile | sed 's/.*:= //')" >> "$GITHUB_ENV"
+          echo "ALPINE_VERSION=$(grep -m 1 ALPINE_VERSION Makefile | sed 's/.*:= //')" >> "$GITHUB_ENV"
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Build image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: krakend-ce/Dockerfile
+          build-args: |
+            GOLANG_VERSION=${{ env.GOLANG_VERSION }}
+            ALPINE_VERSION=${{ env.ALPINE_VERSION }}
+          push: false
+          load: true
+          tags: openrm/krakend-ce:latest
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: openrm/krakend-ce:latest
+          scan-type: image
+          scanners: vuln
+          severity: CRITICAL,HIGH
+          exit-code: '1'
+          ignore-unfixed: true
+          trivyignores: krakend-ce/.trivyignore
+          format: sarif
+          output: trivy-results.sarif
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        # org-wide GitHub Advanced Security (CODE_SCANNING_ENABLED) isn't on
+        # yet -- see fleet-ops/docs/ci-patterns.md "Known gaps" -- so this
+        # step is a no-op until that changes, rather than a guaranteed failure.
+        if: always() && vars.CODE_SCANNING_ENABLED == 'true'
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy-results.sarif

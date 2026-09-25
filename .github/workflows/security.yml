@@ -37,7 +37,8 @@ jobs:
           skip-dirs: 'tests'
 
       - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v2
+        if: always() && vars.CODE_SCANNING_ENABLED == 'true'
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: 'trivy-results.sarif'
 
@@ -49,14 +50,42 @@ jobs:
     strategy:
       matrix:
         config:
-          - image: krakend/krakend-ce
-            dockerfile: Dockerfile
+          - image: openrm/krakend-ce
+            dockerfile: krakend-ce/Dockerfile
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout krakend-ce
+        uses: actions/checkout@v4
+        with:
+          path: krakend-ce
+
+      # go.mod's krakend-jose/krakend-cel/krakend-opencensus/krakend-martian
+      # replace directives point at ../krakend-<name> (see
+      # krakend-ce/REBASE_PLAYBOOK.md for why) -- the build needs them
+      # checked out as siblings of krakend-ce, matching the Dockerfile.
+      - name: Checkout krakend-jose
+        uses: actions/checkout@v4
+        with:
+          repository: openrm/krakend-jose
+          path: krakend-jose
+      - name: Checkout krakend-cel
+        uses: actions/checkout@v4
+        with:
+          repository: openrm/krakend-cel
+          path: krakend-cel
+      - name: Checkout krakend-opencensus
+        uses: actions/checkout@v4
+        with:
+          repository: openrm/krakend-opencensus
+          path: krakend-opencensus
+      - name: Checkout krakend-martian
+        uses: actions/checkout@v4
+        with:
+          repository: openrm/krakend-martian
+          path: krakend-martian
 
       - name: Set the environment variables
+        working-directory: krakend-ce
         run: |
           echo "GOLANG_VERSION=$(grep -m 1 GOLANG_VERSION Makefile | sed 's/^.*= //g')" >> $GITHUB_ENV
           echo "ALPINE_VERSION=$(grep -m 1 ALPINE_VERSION Makefile | sed 's/^.*= //g')" >> $GITHUB_ENV
@@ -71,7 +100,7 @@ jobs:
             type=sha
 
       - name: "Build image ${{ matrix.config.image }}"
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ${{ matrix.config.dockerfile }}
@@ -84,18 +113,19 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Run Trivy vulnerability scanner in image mode
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
           scan-type: 'image'
           image-ref: ${{ steps.meta.outputs.tags }}
-          security-checks: 'vuln,secret'
+          scanners: 'vuln'
           ignore-unfixed: true
           format: 'sarif'
           output: 'trivy-results.sarif'
           severity: 'HIGH,CRITICAL'
-          skip-dirs: 'tests'
+          trivyignores: 'krakend-ce/.trivyignore'
 
       - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v2
+        if: always() && vars.CODE_SCANNING_ENABLED == 'true'
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: 'trivy-results.sarif'
