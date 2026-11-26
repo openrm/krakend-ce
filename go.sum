@@ -701,6 +701,8 @@ github.com/op/go-logging v0.0.0-20160315200505-970db520ece7 h1:lDH9UUVJtmYCjyT0C
 github.com/op/go-logging v0.0.0-20160315200505-970db520ece7/go.mod h1:HzydrMdWErDVzsI23lYNej1Htcns9BCg93Dk0bBINWk=
 github.com/openrm/krakend-bloomd/v2 v2.0.1-0.20260929040834-a17a0191fccb h1:/TK12I62ATFdRARBWnHydQEALM08TB8tEan5fI8ok4o=
 github.com/openrm/krakend-bloomd/v2 v2.0.1-0.20260929040834-a17a0191fccb/go.mod h1:qLwNm3BUBQ4inxrExvfzgu0Y+LbTAm28ol6Zh4d1ek8=
+github.com/openrm/krakend-bloomd/v2 v2.0.1-0.20261126051541-622a50676236 h1:5ObREeIN5Xl0dfCIrYqJFT0H8vxbxFXhPMnx6OfK/Q4=
+github.com/openrm/krakend-bloomd/v2 v2.0.1-0.20261126051541-622a50676236/go.mod h1:qLwNm3BUBQ4inxrExvfzgu0Y+LbTAm28ol6Zh4d1ek8=
 github.com/openrm/krakend-cel/v2 v2.0.2-0.20260929040542-63b342a4c463 h1:hLULrnfO+sVJS7Pct7IBccGmqYrr108YCfNx3gkrcWE=
 github.com/openrm/krakend-cel/v2 v2.0.2-0.20260929040542-63b342a4c463/go.mod h1:1B/CTTuVmJN9J1M2ez85AmG7kg+HDuSg1om91BTw8eY=
 github.com/openrm/krakend-jose/v2 v2.0.6-0.20260929040551-d82f1e6cc331 h1:qC79PUEWn8PwKzlcMbBV/igp2RgzNVKahHz+mI160YI=

@@ -36,7 +36,7 @@ require (
 	github.com/krakend/krakend-usage/v2 v2.1.0
 	github.com/krakend/krakend-xml/v2 v2.2.2
 	github.com/luraproject/lura/v2 v2.14.2-0.20260316170719-6d79b4ef723b
-	github.com/openrm/krakend-bloomd/v2 v2.0.1-0.20260929040834-a17a0191fccb
+	github.com/openrm/krakend-bloomd/v2 v2.0.1-0.20261126051541-622a50676236
 	github.com/openrm/krakend-sentry/v2 v2.0.2-alpha
 	github.com/santhosh-tekuri/jsonschema/v6 v6.0.2
 	github.com/spf13/cobra v1.8.1
